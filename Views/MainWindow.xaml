@@ -1,0 +1,207 @@
+﻿<Window
+    x:Class="Farmacia.Views.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Farmacia.Views"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="MainWindow"
+    Width="1440"
+    Height="960"
+    AllowsTransparency="True"
+    Background="Transparent"
+    MouseDown="Window_MouseDown"
+    WindowStartupLocation="CenterScreen"
+    WindowState="Normal"
+    WindowStyle="None">
+    <Border Background="{DynamicResource PrimaryBackgroundColor}" CornerRadius="8">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <!--  Start: GridColum Left  -->
+            <Border Background="{DynamicResource SecundaryBackgroundColor}" CornerRadius="8 0 0 8">
+                <Grid x:Name="gridMenu" Width="60">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="60" />
+                        <RowDefinition Height="80" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+
+                    <!--  Logo  -->
+                    <StackPanel
+                        Grid.Row="1"
+                        VerticalAlignment="Top"
+                        Orientation="Horizontal">
+                        <Path
+                            Width="25"
+                            Height="25"
+                            Margin="16,0,0,0"
+                            HorizontalAlignment="Left"
+                            Fill="{DynamicResource PrimaryBlueColor}"
+                            Stretch="Fill" />
+                    </StackPanel>
+
+                    <!--  Menu  -->
+                    <ToggleButton
+                        x:Name="btnMenu"
+                        Margin="0,0,15,0"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Center"
+                        Background="Transparent"
+                        BorderThickness="0"
+                        Style="{StaticResource MenuIconStyle}">
+                        <ToggleButton.Triggers>
+                            <EventTrigger RoutedEvent="ToggleButton.Unchecked">
+                                <BeginStoryboard>
+                                    <Storyboard x:Name="HideStackPanel">
+                                        <DoubleAnimation
+                                            BeginTime="0:0:0"
+                                            Storyboard.TargetName="gridMenu"
+                                            Storyboard.TargetProperty="Width"
+                                            From="200"
+                                            To="60"
+                                            Duration="0:0:0.3" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                            <EventTrigger RoutedEvent="ToggleButton.Checked">
+                                <BeginStoryboard>
+                                    <Storyboard x:Name="ShowStackPanel">
+                                        <DoubleAnimation
+                                            BeginTime="0:0:0"
+                                            Storyboard.TargetName="gridMenu"
+                                            Storyboard.TargetProperty="Width"
+                                            From="60"
+                                            To="200"
+                                            Duration="0:0:0.3" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </ToggleButton.Triggers>
+                    </ToggleButton>
+
+                    <StackPanel Grid.Row="3">
+                        <RadioButton
+                            x:Name="rdHome"
+                            Click="rdHome_Click"
+                            Content="Home"
+                            IsChecked="True"
+                            Style="{DynamicResource MenuRadioButtonStyle}"
+                            Tag="{DynamicResource home}" />
+                        <RadioButton
+                            x:Name="rdSounds"
+                            Margin="0,5,0,5"
+                            Click="rdSounds_Click"
+                            Content="Sounds"
+                            Style="{DynamicResource MenuRadioButtonStyle}"
+                            Tag="{DynamicResource headphones}" />
+                        <RadioButton
+                            x:Name="rdNotes"
+                            Click="rdNotes_Click"
+                            Content="Notes"
+                            Style="{DynamicResource MenuRadioButtonStyle}"
+                            Tag="{DynamicResource notes}" />
+                        <RadioButton
+                            x:Name="rdPayment"
+                            Margin="0,5,0,5"
+                            Click="rdPayment_Click"
+                            Content="Payment"
+                            Style="{DynamicResource MenuRadioButtonStyle}"
+                            Tag="{DynamicResource payment}" />
+                    </StackPanel>
+
+                    <StackPanel
+                        Grid.Row="3"
+                        Width="200"
+                        Margin="0,0,0,20"
+                        VerticalAlignment="Bottom"
+                        Orientation="Horizontal">
+                        <Ellipse
+                            Width="40"
+                            Height="40"
+                            Margin="10,0,0,0">
+                            <Ellipse.Fill>
+                                <ImageBrush ImageSource="/Assets/wpfui-icon-1024.png" />
+                            </Ellipse.Fill>
+                        </Ellipse>
+                        <StackPanel Margin="8,0,0,0" Orientation="Vertical">
+                            <Label
+                                HorizontalAlignment="Left"
+                                HorizontalContentAlignment="Center"
+                                Content="Scarlett Gwen"
+                                FontSize="14"
+                                FontWeight="SemiBold"
+                                Foreground="{DynamicResource TextPrimaryColor}" />
+                            <Label
+                                Margin="0,-10,0,0"
+                                HorizontalAlignment="Left"
+                                HorizontalContentAlignment="Center"
+                                Content="scarlettgwen@gmail.com"
+                                FontSize="11"
+                                FontWeight="Regular"
+                                Foreground="{DynamicResource PrimaryGrayColor}" />
+                        </StackPanel>
+                    </StackPanel>
+                </Grid>
+            </Border>
+            <!--  End: GridColum Left  -->
+
+            <!--  Start: GridColumn Rigth  -->
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60" />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+
+                <!--  Start: Button Close | Restore | Minimize  -->
+                <StackPanel
+                    Grid.Row="0"
+                    Grid.Column="4"
+                    Height="30"
+                    Margin="0,5,10,0"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Top"
+                    FlowDirection="RightToLeft"
+                    Orientation="Horizontal">
+                    <Button
+                        x:Name="btnClose"
+                        Click="btnClose_Click"
+                        Content="{DynamicResource close}"
+                        Style="{StaticResource IconButtonsStyle}"
+                        Tag="IsCloseButton" />
+                    <Button
+                        x:Name="btnRestore"
+                        Margin="5,0"
+                        Click="btnRestore_Click">
+                        <Button.Style>
+                            <Style BasedOn="{StaticResource IconButtonsStyle}" TargetType="{x:Type Button}">
+                                <Setter Property="Content" Value="{DynamicResource maximize}" />
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding ElementName=home, Path=WindowState}" Value="Maximized">
+                                        <Setter Property="Content" Value="{DynamicResource restore}" />
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                    </Button>
+                    <Button
+                        x:Name="btnMinimize"
+                        Click="btnMinimize_Click"
+                        Content="{DynamicResource minimize}"
+                        Style="{DynamicResource IconButtonsStyle}" />
+                </StackPanel>
+                <!--  End: Button Close | Restore | Minimize  -->
+
+                <Border Grid.Row="1" Margin="10">
+                    <Frame x:Name="PagesNavigation" NavigationUIVisibility="Hidden">
+                        <!--  Page Content  -->
+                    </Frame>
+                </Border>
+            </Grid>
+            <!--  Start: GridColumn Rigth  -->
+        </Grid>
+    </Border>
+</Window>
