@@ -10,6 +10,12 @@
     <Compile Update="MainPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\ClientesView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\ComprasView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\FacturasView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -23,6 +29,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\UsuariosView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\VentasView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -39,6 +48,12 @@
     <Page Update="Styles\MainStyle.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Views\ClientesView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\ComprasView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Views\FacturasView.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -52,6 +67,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\UsuariosView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\VentasView.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

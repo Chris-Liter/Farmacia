@@ -63,7 +63,7 @@
                                             Storyboard.TargetProperty="Width"
                                             From="200"
                                             To="60"
-                                            Duration="0:0:0.3" />
+                                            Duration="0:0:0.1" />
                                     </Storyboard>
                                 </BeginStoryboard>
                             </EventTrigger>
@@ -76,7 +76,7 @@
                                             Storyboard.TargetProperty="Width"
                                             From="60"
                                             To="200"
-                                            Duration="0:0:0.3" />
+                                            Duration="0:0:0.1" />
                                     </Storyboard>
                                 </BeginStoryboard>
                             </EventTrigger>
@@ -95,22 +95,44 @@
                             x:Name="rdSounds"
                             Margin="0,5,0,5"
                             Click="rdSounds_Click"
-                            Content="Sounds"
+                            Content="Inventario"
                             Style="{DynamicResource MenuRadioButtonStyle}"
-                            Tag="{DynamicResource headphones}" />
+                            Tag="{DynamicResource inventory}" />
                         <RadioButton
                             x:Name="rdNotes"
                             Click="rdNotes_Click"
-                            Content="Notes"
+                            Content="Facturas"
                             Style="{DynamicResource MenuRadioButtonStyle}"
-                            Tag="{DynamicResource notes}" />
+                            Tag="{DynamicResource invoice}" />
+
+                        <RadioButton
+                            x:Name="rdClientes"
+                            Margin="0,5,0,5"
+                            Click="rdClientes_Click"
+                            Content="Clientes"
+                            Style="{DynamicResource MenuRadioButtonStyle}"
+                            Tag="{DynamicResource clients}" />
+                        <RadioButton
+                            x:Name="rdCompras"
+                            Margin="0,5,0,5"
+                            Click="rdCompras_Click"
+                            Content="Compras"
+                            Style="{DynamicResource MenuRadioButtonStyle}"
+                            Tag="{DynamicResource purchases}" />
+                        <RadioButton
+                            x:Name="rdVender"
+                            Margin="0,5,0,5"
+                            Click="rdVender_Click"
+                            Content="Ventas"
+                            Style="{DynamicResource MenuRadioButtonStyle}"
+                            Tag="{DynamicResource sales}" />
                         <RadioButton
                             x:Name="rdPayment"
                             Margin="0,5,0,5"
                             Click="rdPayment_Click"
-                            Content="Payment"
+                            Content="Usuarios"
                             Style="{DynamicResource MenuRadioButtonStyle}"
-                            Tag="{DynamicResource payment}" />
+                            Tag="{DynamicResource users}" />
                     </StackPanel>
 
                     <StackPanel
@@ -131,7 +153,7 @@
                             <Label
                                 HorizontalAlignment="Left"
                                 HorizontalContentAlignment="Center"
-                                Content="Scarlett Gwen"
+                                Content="Farmacia"
                                 FontSize="14"
                                 FontWeight="SemiBold"
                                 Foreground="{DynamicResource TextPrimaryColor}" />
@@ -139,7 +161,7 @@
                                 Margin="0,-10,0,0"
                                 HorizontalAlignment="Left"
                                 HorizontalContentAlignment="Center"
-                                Content="scarlettgwen@gmail.com"
+                                Content="lafarmacia@gmail.com"
                                 FontSize="11"
                                 FontWeight="Regular"
                                 Foreground="{DynamicResource PrimaryGrayColor}" />

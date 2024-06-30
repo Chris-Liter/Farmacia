@@ -6,89 +6,50 @@ using System.Threading.Tasks;
 
 namespace Farmacia.Models
 {
-    internal class ProductModel
+    public class ProductModel
     {
-        private int pro_id;
-        private string pro_nombre;
-        private string pro_codigo;
-        private double pro_precio;
-        private int pro_stock;
-        private Taxes pro_iva;
-        private int tr_cat_id;
-        private string descripcion;
+        private int id;
+        private string codigo_producto;
+        private string nombre;
+        private double precio;
+        private int stock;
+        private Taxes iva;
 
-
-        public int Pro_id
-        {   
-            get { return pro_id; }
+        public int Id
+        {
+            get { return id; }
             set
             {
-                pro_id = value;
-                
+                id = value;
             }
         }
-        public string Descripcion
+        public string CodigoProducto
         {
-            get { return descripcion; }
-            set { descripcion = value;  }
-        }
-
-        public string Pro_nombre
-        {
-            get { return pro_nombre; }
-            set
+            get
             {
-                pro_nombre = value;
-                
+                return codigo_producto;
             }
+            set { codigo_producto = value; }
         }
-
-        public string Pro_codigo
+        public string Nombre
         {
-            get { return pro_codigo; }
-            set
-            {
-                pro_codigo = value;
-                
-            }
+            get { return nombre; }
+            set { nombre = value; }
         }
-
-        public double Pro_precio
+        public double Precio
         {
-            get { return pro_precio; }
-            set
-            {
-                pro_precio = value;
-                
-
-            }
+            get { return precio; }
+            set { precio = value; }
         }
-        public int Pro_stock
+        public int Stock
         {
-            get { return pro_stock; }
-            set
-            {
-                pro_stock = value;
-                
-
-            }
+            get { return stock; }
+            set { stock = value; }
         }
-        public Taxes Pro_iva
+        public Taxes Iva
         {
-            get { return pro_iva; }
-            set
-            {
-                pro_iva = value;
-                
-            }
-        }
-        public int Tr_cat_id
-        {
-            get { return tr_cat_id; }
-            set {
-                tr_cat_id = value;
-                
-            }
+            get { return iva; }
+            set { iva = value; }
         }
     }
 }

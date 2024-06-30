@@ -32,12 +32,13 @@ namespace Farmacia.ViewModel
                     var resp = await client.GetAsync($"{url}/login/{Name}/{Password}");
                     if(!resp.IsSuccessStatusCode)
                     {
-                        MessageBox.Show("ERROR","Fallo de la conexion", MessageBoxButton.OK);
+                        MessageBox.Show("Contraseña o usuario incorrecto", "ERROR", MessageBoxButton.OK);
                     }
                     else
                     {
                         MainWindow main = new MainWindow();
                         main.Show();
+                        main.miFrame.Navigate(new System.Uri("Views/HomeView.xaml", UriKind.RelativeOrAbsolute));
                         var iniciarSesion = MainPage.Current;
                         iniciarSesion.Close();
                     }

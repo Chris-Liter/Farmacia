@@ -19,6 +19,7 @@ namespace Farmacia.Views
     /// </summary>
     public partial class MainWindow : Window
     {
+        public Frame miFrame => PagesNavigation;
         public MainWindow()
         {
             InitializeComponent();
@@ -71,6 +72,21 @@ namespace Farmacia.Views
                 DragMove();
             }
 
+        }
+
+        private void rdClientes_Click(object sender, RoutedEventArgs e)
+        {
+            PagesNavigation.Navigate(new System.Uri("Views/ClientesView.xaml", UriKind.RelativeOrAbsolute));
+        }
+
+        private void rdCompras_Click(object sender, RoutedEventArgs e)
+        {
+            PagesNavigation.Navigate(new System.Uri("Views/ComprasView.xaml", UriKind.RelativeOrAbsolute));
+        }
+
+        private void rdVender_Click(object sender, RoutedEventArgs e)
+        {
+            PagesNavigation.Navigate(new System.Uri("Views/VentasView.xaml", UriKind.RelativeOrAbsolute));
         }
     }
 }

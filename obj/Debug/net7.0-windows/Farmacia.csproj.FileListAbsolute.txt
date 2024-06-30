@@ -63,3 +63,10 @@ C:\Users\jorge\source\repos\Farmacia\Farmacia\obj\Debug\net7.0-windows\Views\Inv
 C:\Users\jorge\source\repos\Farmacia\Farmacia\obj\Debug\net7.0-windows\Views\MainWindow.baml
 C:\Users\jorge\source\repos\Farmacia\Farmacia\obj\Debug\net7.0-windows\Views\UsuariosView.baml
 C:\Users\jorge\source\repos\Farmacia\Farmacia\obj\Debug\net7.0-windows\Assets\Icons\Icons.baml
+C:\Users\jorge\source\repos\Farmacia\Farmacia\obj\Debug\net7.0-windows\Farmacia.sourcelink.json
+C:\Users\jorge\source\repos\Farmacia\Farmacia\obj\Debug\net7.0-windows\Views\ClientesView.g.cs
+C:\Users\jorge\source\repos\Farmacia\Farmacia\obj\Debug\net7.0-windows\Views\ComprasView.g.cs
+C:\Users\jorge\source\repos\Farmacia\Farmacia\obj\Debug\net7.0-windows\Views\VentasView.g.cs
+C:\Users\jorge\source\repos\Farmacia\Farmacia\obj\Debug\net7.0-windows\Views\ClientesView.baml
+C:\Users\jorge\source\repos\Farmacia\Farmacia\obj\Debug\net7.0-windows\Views\ComprasView.baml
+C:\Users\jorge\source\repos\Farmacia\Farmacia\obj\Debug\net7.0-windows\Views\VentasView.baml

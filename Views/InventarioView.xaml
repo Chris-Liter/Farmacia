@@ -1,12 +1,75 @@
-﻿<Page x:Class="Farmacia.Views.InventarioView"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Farmacia.Views"
-        mc:Ignorable="d"
-        Title="InventarioView" Height="450" Width="800">
+﻿<Page
+    x:Class="Farmacia.Views.InventarioView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:inventario="clr-namespace:Farmacia.ViewModel"
+    xmlns:local="clr-namespace:Farmacia.Views"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="InventarioView"
+    Width="1440"
+    Height="960"
+    mc:Ignorable="d">
+    <Page.DataContext>
+        <inventario:InventoryViewModel />
+    </Page.DataContext>
     <Grid>
-        
+        <Border Background="{DynamicResource SecundaryBackgroundColor}" CornerRadius="5">
+            <StackPanel>
+                <TextBlock
+                    Margin="30,5,0,0"
+                    FontSize="35"
+                    FontWeight="Bold"
+                    Text="Inventario" />
+                <StackPanel>
+                    <DataGrid
+                        x:Name="ItemsDatagrid"
+                        Width="620"
+                        HorizontalAlignment="Stretch"
+                        AutoGenerateColumns="False"
+                        BorderBrush="Black"
+                        CanUserAddRows="True"
+                        CanUserReorderColumns="False"
+                        IsReadOnly="True"
+                        ItemsSource="{Binding Productos, Mode=TwoWay, IsAsync=True}"
+                        RowDetailsVisibilityMode="Visible"
+                        SelectedItem="{Binding SelectedProduct}"
+                        SelectionMode="Extended">
+                        <DataGrid.Columns>
+
+                            <DataGridTextColumn
+                                Width="*"
+                                MinWidth="200"
+                                Binding="{Binding CodigoProducto}"
+                                CanUserSort="False"
+                                FontSize="15"
+                                Header="Nombre" />
+                            <DataGridTextColumn
+                                Width="*"
+                                MinWidth="200"
+                                Binding="{Binding Nombre}"
+                                CanUserSort="False"
+                                FontSize="15"
+                                Header="Nombre" />
+                            <DataGridTextColumn
+                                Width="*"
+                                MinWidth="200"
+                                Binding="{Binding Precio}"
+                                CanUserSort="False"
+                                FontSize="15"
+                                Header="Precio" />
+                            <DataGridTextColumn
+                                Width="*"
+                                MinWidth="200"
+                                Binding="{Binding Stock}"
+                                CanUserSort="False"
+                                FontSize="15"
+                                Header="Stock" />
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </StackPanel>
+            </StackPanel>
+        </Border>
+
     </Grid>
 </Page>
