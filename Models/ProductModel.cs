@@ -13,7 +13,7 @@ namespace Farmacia.Models
         private string nombre;
         private double precio;
         private int stock;
-        private Taxes iva;
+        private double iva;
 
         public int Id
         {
@@ -46,10 +46,21 @@ namespace Farmacia.Models
             get { return stock; }
             set { stock = value; }
         }
-        public Taxes Iva
+        public double Iva
         {
             get { return iva; }
             set { iva = value; }
         }
     }
+
+    public class ProductsModel : BaseModel
+    {
+        public double id { get; set; }
+        public string codigo_producto { get; set; }
+        public string nombre{ get; set; }
+        public double precio { get; set; }
+        public double stock { get; set; }
+        public double iva { get; set; }
+    }
+
 }

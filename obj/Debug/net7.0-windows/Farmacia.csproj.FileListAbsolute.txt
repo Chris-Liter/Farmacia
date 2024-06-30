@@ -70,3 +70,5 @@ C:\Users\jorge\source\repos\Farmacia\Farmacia\obj\Debug\net7.0-windows\Views\Ven
 C:\Users\jorge\source\repos\Farmacia\Farmacia\obj\Debug\net7.0-windows\Views\ClientesView.baml
 C:\Users\jorge\source\repos\Farmacia\Farmacia\obj\Debug\net7.0-windows\Views\ComprasView.baml
 C:\Users\jorge\source\repos\Farmacia\Farmacia\obj\Debug\net7.0-windows\Views\VentasView.baml
+C:\Users\jorge\source\repos\Farmacia\Farmacia\bin\Debug\net7.0-windows\MahApps.Metro.IconPacks.Core.dll
+C:\Users\jorge\source\repos\Farmacia\Farmacia\bin\Debug\net7.0-windows\MahApps.Metro.IconPacks.Material.dll

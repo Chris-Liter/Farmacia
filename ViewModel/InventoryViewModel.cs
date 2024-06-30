@@ -1,6 +1,7 @@
 ﻿using Farmacia.Models;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
@@ -9,9 +10,9 @@ using System.Threading.Tasks;
 
 namespace Farmacia.ViewModel
 {
-    public class InventoryViewModel: ProductModel
+    public class InventoryViewModel: ProductsModel
     {
-        public List<ProductModel> productos;
+        public ObservableCollection<ProductsModel> productos;
         public ProductModel selectedProduct;
         public ProductModel SelectedProduct
         {
@@ -20,10 +21,11 @@ namespace Farmacia.ViewModel
         }
         public InventoryViewModel()
         {
+            Productos = new ObservableCollection<ProductsModel>();
             Update();
         }
-        public List<ProductModel> Productos { get { return productos; }  set { productos = value; } }
-        public async void Update(ref List<ProductModel> productos)
+        public ObservableCollection<ProductsModel> Productos { get { return productos; }  set { productos = value; OnPropertyChanged(nameof(Productos)); } }
+        public async Task Update()
         {
             string url = "http://localhost:8080/api/Producto";
 
@@ -31,8 +33,19 @@ namespace Farmacia.ViewModel
             {
                 var response = await client.GetAsync(url);
                 string json = await response.Content.ReadAsStringAsync();
-                var jsonTransformado = JsonSerializer.Deserialize<List<ProductModel>>(json);
-                
+
+                var options = new JsonSerializerOptions
+                {
+                    PropertyNameCaseInsensitive = true,
+                    NumberHandling = System.Text.Json.Serialization.JsonNumberHandling.Strict
+                };
+
+                var jsonTransformado = JsonSerializer.Deserialize<List<ProductsModel>>(json, options);
+               
+                foreach (var  item in jsonTransformado)
+                {
+                    Productos.Add(item);
+                }
             }
         }
 

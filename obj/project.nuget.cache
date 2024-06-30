@@ -1,10 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "yzSMxtYcrk0=",
+  "dgSpecHash": "tm/gqXB/L4k=",
   "success": true,
   "projectFilePath": "C:\\Users\\jorge\\source\\repos\\Farmacia\\Farmacia\\Farmacia.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jorge\\.nuget\\packages\\communitytoolkit.mvvm\\8.2.1\\communitytoolkit.mvvm.8.2.1.nupkg.sha512",
+    "C:\\Users\\jorge\\.nuget\\packages\\mahapps.metro.iconpacks.core\\5.0.0\\mahapps.metro.iconpacks.core.5.0.0.nupkg.sha512",
+    "C:\\Users\\jorge\\.nuget\\packages\\mahapps.metro.iconpacks.material\\5.0.0\\mahapps.metro.iconpacks.material.5.0.0.nupkg.sha512",
     "C:\\Users\\jorge\\.nuget\\packages\\microsoft.extensions.configuration\\7.0.0\\microsoft.extensions.configuration.7.0.0.nupkg.sha512",
     "C:\\Users\\jorge\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\7.0.0\\microsoft.extensions.configuration.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\jorge\\.nuget\\packages\\microsoft.extensions.configuration.binder\\7.0.3\\microsoft.extensions.configuration.binder.7.0.3.nupkg.sha512",

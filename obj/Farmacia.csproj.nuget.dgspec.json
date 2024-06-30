@@ -55,6 +55,10 @@
               "target": "Package",
               "version": "[8.2.1, )"
             },
+            "MahApps.Metro.IconPacks.Material": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
             "Microsoft.Extensions.Hosting": {
               "target": "Package",
               "version": "[7.0.1, )"
