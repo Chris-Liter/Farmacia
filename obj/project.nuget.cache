@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "tm/gqXB/L4k=",
+  "dgSpecHash": "PBeOcBVelko=",
   "success": true,
   "projectFilePath": "C:\\Users\\jorge\\source\\repos\\Farmacia\\Farmacia\\Farmacia.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\jorge\\.nuget\\packages\\communitytoolkit.mvvm\\8.2.1\\communitytoolkit.mvvm.8.2.1.nupkg.sha512",
+    "C:\\Users\\jorge\\.nuget\\packages\\communitytoolkit.mvvm\\8.2.2\\communitytoolkit.mvvm.8.2.2.nupkg.sha512",
     "C:\\Users\\jorge\\.nuget\\packages\\mahapps.metro.iconpacks.core\\5.0.0\\mahapps.metro.iconpacks.core.5.0.0.nupkg.sha512",
     "C:\\Users\\jorge\\.nuget\\packages\\mahapps.metro.iconpacks.material\\5.0.0\\mahapps.metro.iconpacks.material.5.0.0.nupkg.sha512",
     "C:\\Users\\jorge\\.nuget\\packages\\microsoft.extensions.configuration\\7.0.0\\microsoft.extensions.configuration.7.0.0.nupkg.sha512",
@@ -32,13 +32,11 @@
     "C:\\Users\\jorge\\.nuget\\packages\\microsoft.extensions.options\\7.0.1\\microsoft.extensions.options.7.0.1.nupkg.sha512",
     "C:\\Users\\jorge\\.nuget\\packages\\microsoft.extensions.options.configurationextensions\\7.0.0\\microsoft.extensions.options.configurationextensions.7.0.0.nupkg.sha512",
     "C:\\Users\\jorge\\.nuget\\packages\\microsoft.extensions.primitives\\7.0.0\\microsoft.extensions.primitives.7.0.0.nupkg.sha512",
-    "C:\\Users\\jorge\\.nuget\\packages\\microsoft.win32.systemevents\\7.0.0\\microsoft.win32.systemevents.7.0.0.nupkg.sha512",
     "C:\\Users\\jorge\\.nuget\\packages\\system.diagnostics.diagnosticsource\\7.0.1\\system.diagnostics.diagnosticsource.7.0.1.nupkg.sha512",
     "C:\\Users\\jorge\\.nuget\\packages\\system.diagnostics.eventlog\\7.0.0\\system.diagnostics.eventlog.7.0.0.nupkg.sha512",
-    "C:\\Users\\jorge\\.nuget\\packages\\system.drawing.common\\7.0.0\\system.drawing.common.7.0.0.nupkg.sha512",
     "C:\\Users\\jorge\\.nuget\\packages\\system.text.encodings.web\\7.0.0\\system.text.encodings.web.7.0.0.nupkg.sha512",
     "C:\\Users\\jorge\\.nuget\\packages\\system.text.json\\7.0.0\\system.text.json.7.0.0.nupkg.sha512",
-    "C:\\Users\\jorge\\.nuget\\packages\\wpf-ui\\3.0.0-preview.4\\wpf-ui.3.0.0-preview.4.nupkg.sha512"
+    "C:\\Users\\jorge\\.nuget\\packages\\wpf-ui\\3.0.4\\wpf-ui.3.0.4.nupkg.sha512"
   ],
   "logs": []
 }

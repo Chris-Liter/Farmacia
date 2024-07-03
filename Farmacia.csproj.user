@@ -28,6 +28,9 @@
     <Compile Update="Views\MainWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\Screens\ManipularInventory.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\UsuariosView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -64,6 +67,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Screens\ManipularInventory.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\UsuariosView.xaml">

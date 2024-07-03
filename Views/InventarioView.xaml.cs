@@ -1,16 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Farmacia.Views.Screens;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace Farmacia.Views
 {
@@ -19,9 +9,30 @@ namespace Farmacia.Views
     /// </summary>
     public partial class InventarioView : Page
     {
+        private ManipularInventory manipularInventory;
         public InventarioView()
         {
+            manipularInventory = new ManipularInventory();
             InitializeComponent();
+        }
+
+        private void btn_Click(object sender, RoutedEventArgs e)
+        {
+            if (manipularInventory.IsVisible == false)
+            {
+                manipularInventory = new ManipularInventory();
+                manipularInventory.Show();
+            }
+        }
+
+        private void btnEditar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnEliminar_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

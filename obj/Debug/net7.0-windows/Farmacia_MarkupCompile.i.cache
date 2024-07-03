@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET7_0;NETCOREAPP
 C:\Users\jorge\source\repos\Farmacia\Farmacia\App.xaml
-121751797140
+131648411524
 1282391436
-251293812520
-228-1794701437
-Assets\Icons\Icons.xaml;MainPage.xaml;Styles\LightTheme.xaml;Styles\MainStyle.xaml;Views\ClientesView.xaml;Views\ComprasView.xaml;Views\FacturasView.xaml;Views\HomeView.xaml;Views\InventarioView.xaml;Views\MainWindow.xaml;Views\UsuariosView.xaml;Views\VentasView.xaml;
+261070401188
+227-1311165973
+Assets\Icons\Icons.xaml;MainPage.xaml;Styles\LightTheme.xaml;Styles\MainStyle.xaml;Views\ClientesView.xaml;Views\ComprasView.xaml;Views\FacturasView.xaml;Views\HomeView.xaml;Views\InventarioView.xaml;Views\MainWindow.xaml;Views\Screens\ManipularInventory.xaml;Views\UsuariosView.xaml;Views\VentasView.xaml;
 
 True
 

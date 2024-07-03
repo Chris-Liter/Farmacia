@@ -6,11 +6,11 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v7.0": {
-      "CommunityToolkit.Mvvm/8.2.1": {
+      "CommunityToolkit.Mvvm/8.2.2": {
         "runtime": {
           "lib/net6.0/CommunityToolkit.Mvvm.dll": {
             "assemblyVersion": "8.2.0.0",
-            "fileVersion": "8.2.1.1"
+            "fileVersion": "8.2.2.1"
           }
         }
       },
@@ -369,22 +369,6 @@
           }
         }
       },
-      "Microsoft.Win32.SystemEvents/7.0.0": {
-        "runtime": {
-          "lib/net7.0/Microsoft.Win32.SystemEvents.dll": {
-            "assemblyVersion": "7.0.0.0",
-            "fileVersion": "7.0.22.51805"
-          }
-        },
-        "runtimeTargets": {
-          "runtimes/win/lib/net7.0/Microsoft.Win32.SystemEvents.dll": {
-            "rid": "win",
-            "assetType": "runtime",
-            "assemblyVersion": "7.0.0.0",
-            "fileVersion": "7.0.22.51805"
-          }
-        }
-      },
       "System.Diagnostics.DiagnosticSource/7.0.1": {
         "runtime": {
           "lib/net7.0/System.Diagnostics.DiagnosticSource.dll": {
@@ -408,25 +392,6 @@
             "fileVersion": "0.0.0.0"
           },
           "runtimes/win/lib/net7.0/System.Diagnostics.EventLog.dll": {
-            "rid": "win",
-            "assetType": "runtime",
-            "assemblyVersion": "7.0.0.0",
-            "fileVersion": "7.0.22.51805"
-          }
-        }
-      },
-      "System.Drawing.Common/7.0.0": {
-        "dependencies": {
-          "Microsoft.Win32.SystemEvents": "7.0.0"
-        },
-        "runtime": {
-          "lib/net7.0/System.Drawing.Common.dll": {
-            "assemblyVersion": "7.0.0.0",
-            "fileVersion": "7.0.22.51805"
-          }
-        },
-        "runtimeTargets": {
-          "runtimes/win/lib/net7.0/System.Drawing.Common.dll": {
             "rid": "win",
             "assetType": "runtime",
             "assemblyVersion": "7.0.0.0",
@@ -461,26 +426,23 @@
           }
         }
       },
-      "WPF-UI/3.0.0-preview.4": {
-        "dependencies": {
-          "System.Drawing.Common": "7.0.0"
-        },
+      "WPF-UI/3.0.4": {
         "runtime": {
           "lib/net7.0-windows7.0/Wpf.Ui.dll": {
-            "assemblyVersion": "3.0.0.0",
-            "fileVersion": "3.0.0.0"
+            "assemblyVersion": "3.0.4.0",
+            "fileVersion": "3.0.4.0"
           }
         }
       }
     }
   },
   "libraries": {
-    "CommunityToolkit.Mvvm/8.2.1": {
+    "CommunityToolkit.Mvvm/8.2.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-I24ofWVEdplxYjUez9/bljv/qb8r8Ccj6cvYXHexNBegLaD3iDy3QrzAAOYVMmfGWIXxlU1ZtECQNfU07+6hXQ==",
-      "path": "communitytoolkit.mvvm/8.2.1",
-      "hashPath": "communitytoolkit.mvvm.8.2.1.nupkg.sha512"
+      "sha512": "sha512-r0g0k9tGYdrnz8R7T3x5UiokDffeevzK/2P/9SBL6fqLgN8B157MIi/bVUWI1KAz6ZorZrK9AdABCWUeXZZsvA==",
+      "path": "communitytoolkit.mvvm/8.2.2",
+      "hashPath": "communitytoolkit.mvvm.8.2.2.nupkg.sha512"
     },
     "MahApps.Metro.IconPacks.Core/5.0.0": {
       "type": "package",
@@ -671,13 +633,6 @@
       "path": "microsoft.extensions.primitives/7.0.0",
       "hashPath": "microsoft.extensions.primitives.7.0.0.nupkg.sha512"
     },
-    "Microsoft.Win32.SystemEvents/7.0.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-2nXPrhdAyAzir0gLl8Yy8S5Mnm/uBSQQA7jEsILOS1MTyS7DbmV1NgViMtvV1sfCD1ebITpNwb1NIinKeJgUVQ==",
-      "path": "microsoft.win32.systemevents/7.0.0",
-      "hashPath": "microsoft.win32.systemevents.7.0.0.nupkg.sha512"
-    },
     "System.Diagnostics.DiagnosticSource/7.0.1": {
       "type": "package",
       "serviceable": true,
@@ -691,13 +646,6 @@
       "sha512": "sha512-eUDP47obqQm3SFJfP6z+Fx2nJ4KKTQbXB4Q9Uesnzw9SbYdhjyoGXuvDn/gEmFY6N5Z3bFFbpAQGA7m6hrYJCw==",
       "path": "system.diagnostics.eventlog/7.0.0",
       "hashPath": "system.diagnostics.eventlog.7.0.0.nupkg.sha512"
-    },
-    "System.Drawing.Common/7.0.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-KIX+oBU38pxkKPxvLcLfIkOV5Ien8ReN78wro7OF5/erwcmortzeFx+iBswlh2Vz6gVne0khocQudGwaO1Ey6A==",
-      "path": "system.drawing.common/7.0.0",
-      "hashPath": "system.drawing.common.7.0.0.nupkg.sha512"
     },
     "System.Text.Encodings.Web/7.0.0": {
       "type": "package",
@@ -713,12 +661,12 @@
       "path": "system.text.json/7.0.0",
       "hashPath": "system.text.json.7.0.0.nupkg.sha512"
     },
-    "WPF-UI/3.0.0-preview.4": {
+    "WPF-UI/3.0.4": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-SoGn6MC/Gkiasw2W9axBN+r5K0wO/k6NC93Df29ED2kZWTIS0Byg95G9w89VP4TAxyFiUz43BLTDMUWZK/8nig==",
-      "path": "wpf-ui/3.0.0-preview.4",
-      "hashPath": "wpf-ui.3.0.0-preview.4.nupkg.sha512"
+      "sha512": "sha512-Jbt8nJ4MSC/WBhqx6iXOW06Rt2UUNVxA8+23AOSM63jlOIhU6e6P4BIw8rL/UnRPycOdA2vntYl5i7k53E0AGg==",
+      "path": "wpf-ui/3.0.4",
+      "hashPath": "wpf-ui.3.0.4.nupkg.sha512"
     }
   }
 }

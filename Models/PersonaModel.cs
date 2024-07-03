@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Farmacia.Models
+﻿namespace Farmacia.Models
 {
     internal class PersonaModel
     {
@@ -20,12 +14,12 @@ namespace Farmacia.Models
         public int Cli_id
         {
             get { return cli_id; }
-            set { cli_id = value;  }
+            set { cli_id = value; }
         }
         public string Cli_cedula
         {
             get { return cli_cedula; }
-            set { cli_cedula = value;  }
+            set { cli_cedula = value; }
         }
         public string Cli_nombres
         {
@@ -33,33 +27,33 @@ namespace Farmacia.Models
             set
             {
                 cli_nombres = value;
-                
+
             }
         }
         public string Cli_apellidos
         {
             get { return cli_apellidos; }
-            set { cli_apellidos = value;  }
+            set { cli_apellidos = value; }
         }
         public string Cli_direccion
         {
             get { return cli_direccion; }
-            set { cli_direccion = value;  }
+            set { cli_direccion = value; }
         }
         public string Cli_telefono
         {
             get { return cli_telefono; }
-            set { cli_telefono = value;  }
+            set { cli_telefono = value; }
         }
         public string Cli_correo
         {
             get { return cli_correo; }
-            set { cli_correo = value;  }
+            set { cli_correo = value; }
         }
         public TypePerson Type_person
         {
             get { return typePerson; }
-            set { typePerson = value;  }
+            set { typePerson = value; }
         }
     }
 }

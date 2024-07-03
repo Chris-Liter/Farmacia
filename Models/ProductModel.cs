@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Farmacia.Models
+﻿namespace Farmacia.Models
 {
     public class ProductModel
     {
@@ -12,7 +6,7 @@ namespace Farmacia.Models
         private string codigo_producto;
         private string nombre;
         private double precio;
-        private int stock;
+        private double stock;
         private double iva;
 
         public int Id
@@ -41,7 +35,7 @@ namespace Farmacia.Models
             get { return precio; }
             set { precio = value; }
         }
-        public int Stock
+        public double Stock
         {
             get { return stock; }
             set { stock = value; }
@@ -57,7 +51,7 @@ namespace Farmacia.Models
     {
         public double id { get; set; }
         public string codigo_producto { get; set; }
-        public string nombre{ get; set; }
+        public string nombre { get; set; }
         public double precio { get; set; }
         public double stock { get; set; }
         public double iva { get; set; }

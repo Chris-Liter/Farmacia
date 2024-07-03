@@ -2,7 +2,7 @@
   "version": 3,
   "targets": {
     "net7.0-windows7.0": {
-      "CommunityToolkit.Mvvm/8.2.1": {
+      "CommunityToolkit.Mvvm/8.2.2": {
         "type": "package",
         "compile": {
           "lib/net6.0/CommunityToolkit.Mvvm.dll": {
@@ -590,28 +590,6 @@
           "buildTransitive/net6.0/_._": {}
         }
       },
-      "Microsoft.Win32.SystemEvents/7.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net7.0/Microsoft.Win32.SystemEvents.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net7.0/Microsoft.Win32.SystemEvents.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net6.0/_._": {}
-        },
-        "runtimeTargets": {
-          "runtimes/win/lib/net7.0/Microsoft.Win32.SystemEvents.dll": {
-            "assetType": "runtime",
-            "rid": "win"
-          }
-        }
-      },
       "System.Diagnostics.DiagnosticSource/7.0.1": {
         "type": "package",
         "compile": {
@@ -649,31 +627,6 @@
             "rid": "win"
           },
           "runtimes/win/lib/net7.0/System.Diagnostics.EventLog.dll": {
-            "assetType": "runtime",
-            "rid": "win"
-          }
-        }
-      },
-      "System.Drawing.Common/7.0.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Win32.SystemEvents": "7.0.0"
-        },
-        "compile": {
-          "lib/net7.0/System.Drawing.Common.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net7.0/System.Drawing.Common.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net6.0/_._": {}
-        },
-        "runtimeTargets": {
-          "runtimes/win/lib/net7.0/System.Drawing.Common.dll": {
             "assetType": "runtime",
             "rid": "win"
           }
@@ -720,19 +673,16 @@
           "buildTransitive/net6.0/System.Text.Json.targets": {}
         }
       },
-      "WPF-UI/3.0.0-preview.4": {
+      "WPF-UI/3.0.4": {
         "type": "package",
-        "dependencies": {
-          "System.Drawing.Common": "7.0.0"
-        },
         "compile": {
           "lib/net7.0-windows7.0/Wpf.Ui.dll": {
-            "related": ".xml"
+            "related": ".pdb;.xml"
           }
         },
         "runtime": {
           "lib/net7.0-windows7.0/Wpf.Ui.dll": {
-            "related": ".xml"
+            "related": ".pdb;.xml"
           }
         },
         "frameworkReferences": [
@@ -742,10 +692,10 @@
     }
   },
   "libraries": {
-    "CommunityToolkit.Mvvm/8.2.1": {
-      "sha512": "I24ofWVEdplxYjUez9/bljv/qb8r8Ccj6cvYXHexNBegLaD3iDy3QrzAAOYVMmfGWIXxlU1ZtECQNfU07+6hXQ==",
+    "CommunityToolkit.Mvvm/8.2.2": {
+      "sha512": "r0g0k9tGYdrnz8R7T3x5UiokDffeevzK/2P/9SBL6fqLgN8B157MIi/bVUWI1KAz6ZorZrK9AdABCWUeXZZsvA==",
       "type": "package",
-      "path": "communitytoolkit.mvvm/8.2.1",
+      "path": "communitytoolkit.mvvm/8.2.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -760,7 +710,7 @@
         "build/netstandard2.1/CommunityToolkit.Mvvm.targets",
         "buildTransitive/netstandard2.0/CommunityToolkit.Mvvm.targets",
         "buildTransitive/netstandard2.1/CommunityToolkit.Mvvm.targets",
-        "communitytoolkit.mvvm.8.2.1.nupkg.sha512",
+        "communitytoolkit.mvvm.8.2.2.nupkg.sha512",
         "communitytoolkit.mvvm.nuspec",
         "lib/net6.0/CommunityToolkit.Mvvm.dll",
         "lib/net6.0/CommunityToolkit.Mvvm.pdb",
@@ -1556,37 +1506,6 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "Microsoft.Win32.SystemEvents/7.0.0": {
-      "sha512": "2nXPrhdAyAzir0gLl8Yy8S5Mnm/uBSQQA7jEsILOS1MTyS7DbmV1NgViMtvV1sfCD1ebITpNwb1NIinKeJgUVQ==",
-      "type": "package",
-      "path": "microsoft.win32.systemevents/7.0.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "buildTransitive/net461/Microsoft.Win32.SystemEvents.targets",
-        "buildTransitive/net462/_._",
-        "buildTransitive/net6.0/_._",
-        "buildTransitive/netcoreapp2.0/Microsoft.Win32.SystemEvents.targets",
-        "lib/net462/Microsoft.Win32.SystemEvents.dll",
-        "lib/net462/Microsoft.Win32.SystemEvents.xml",
-        "lib/net6.0/Microsoft.Win32.SystemEvents.dll",
-        "lib/net6.0/Microsoft.Win32.SystemEvents.xml",
-        "lib/net7.0/Microsoft.Win32.SystemEvents.dll",
-        "lib/net7.0/Microsoft.Win32.SystemEvents.xml",
-        "lib/netstandard2.0/Microsoft.Win32.SystemEvents.dll",
-        "lib/netstandard2.0/Microsoft.Win32.SystemEvents.xml",
-        "microsoft.win32.systemevents.7.0.0.nupkg.sha512",
-        "microsoft.win32.systemevents.nuspec",
-        "runtimes/win/lib/net6.0/Microsoft.Win32.SystemEvents.dll",
-        "runtimes/win/lib/net6.0/Microsoft.Win32.SystemEvents.xml",
-        "runtimes/win/lib/net7.0/Microsoft.Win32.SystemEvents.dll",
-        "runtimes/win/lib/net7.0/Microsoft.Win32.SystemEvents.xml",
-        "useSharedDesignerContext.txt"
-      ]
-    },
     "System.Diagnostics.DiagnosticSource/7.0.1": {
       "sha512": "T9SLFxzDp0SreCffRDXSAS5G+lq6E8qP4knHS2IBjwCdx2KEvGnGZsq7gFpselYOda7l6gXsJMD93TQsFj/URA==",
       "type": "package",
@@ -1644,43 +1563,6 @@
         "runtimes/win/lib/net7.0/System.Diagnostics.EventLog.xml",
         "system.diagnostics.eventlog.7.0.0.nupkg.sha512",
         "system.diagnostics.eventlog.nuspec",
-        "useSharedDesignerContext.txt"
-      ]
-    },
-    "System.Drawing.Common/7.0.0": {
-      "sha512": "KIX+oBU38pxkKPxvLcLfIkOV5Ien8ReN78wro7OF5/erwcmortzeFx+iBswlh2Vz6gVne0khocQudGwaO1Ey6A==",
-      "type": "package",
-      "path": "system.drawing.common/7.0.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "buildTransitive/net461/System.Drawing.Common.targets",
-        "buildTransitive/net462/_._",
-        "buildTransitive/net6.0/_._",
-        "buildTransitive/netcoreapp2.0/System.Drawing.Common.targets",
-        "lib/MonoAndroid10/_._",
-        "lib/MonoTouch10/_._",
-        "lib/net462/System.Drawing.Common.dll",
-        "lib/net462/System.Drawing.Common.xml",
-        "lib/net6.0/System.Drawing.Common.dll",
-        "lib/net6.0/System.Drawing.Common.xml",
-        "lib/net7.0/System.Drawing.Common.dll",
-        "lib/net7.0/System.Drawing.Common.xml",
-        "lib/netstandard2.0/System.Drawing.Common.dll",
-        "lib/netstandard2.0/System.Drawing.Common.xml",
-        "lib/xamarinios10/_._",
-        "lib/xamarinmac20/_._",
-        "lib/xamarintvos10/_._",
-        "lib/xamarinwatchos10/_._",
-        "runtimes/win/lib/net6.0/System.Drawing.Common.dll",
-        "runtimes/win/lib/net6.0/System.Drawing.Common.xml",
-        "runtimes/win/lib/net7.0/System.Drawing.Common.dll",
-        "runtimes/win/lib/net7.0/System.Drawing.Common.xml",
-        "system.drawing.common.7.0.0.nupkg.sha512",
-        "system.drawing.common.nuspec",
         "useSharedDesignerContext.txt"
       ]
     },
@@ -1786,27 +1668,35 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "WPF-UI/3.0.0-preview.4": {
-      "sha512": "SoGn6MC/Gkiasw2W9axBN+r5K0wO/k6NC93Df29ED2kZWTIS0Byg95G9w89VP4TAxyFiUz43BLTDMUWZK/8nig==",
+    "WPF-UI/3.0.4": {
+      "sha512": "Jbt8nJ4MSC/WBhqx6iXOW06Rt2UUNVxA8+23AOSM63jlOIhU6e6P4BIw8rL/UnRPycOdA2vntYl5i7k53E0AGg==",
       "type": "package",
-      "path": "wpf-ui/3.0.0-preview.4",
+      "path": "wpf-ui/3.0.4",
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "README.md",
         "lib/net462/Wpf.Ui.dll",
+        "lib/net462/Wpf.Ui.pdb",
         "lib/net462/Wpf.Ui.xml",
         "lib/net472/Wpf.Ui.dll",
+        "lib/net472/Wpf.Ui.pdb",
         "lib/net472/Wpf.Ui.xml",
         "lib/net481/Wpf.Ui.dll",
+        "lib/net481/Wpf.Ui.pdb",
         "lib/net481/Wpf.Ui.xml",
         "lib/net6.0-windows7.0/Wpf.Ui.dll",
+        "lib/net6.0-windows7.0/Wpf.Ui.pdb",
         "lib/net6.0-windows7.0/Wpf.Ui.xml",
         "lib/net7.0-windows7.0/Wpf.Ui.dll",
+        "lib/net7.0-windows7.0/Wpf.Ui.pdb",
         "lib/net7.0-windows7.0/Wpf.Ui.xml",
+        "lib/net8.0-windows7.0/Wpf.Ui.dll",
+        "lib/net8.0-windows7.0/Wpf.Ui.pdb",
+        "lib/net8.0-windows7.0/Wpf.Ui.xml",
         "tools/VisualStudioToolsManifest.xml",
-        "wpf-ui.3.0.0-preview.4.nupkg.sha512",
+        "wpf-ui.3.0.4.nupkg.sha512",
         "wpf-ui.nuspec",
         "wpfui.png"
       ]
@@ -1814,10 +1704,10 @@
   },
   "projectFileDependencyGroups": {
     "net7.0-windows7.0": [
-      "CommunityToolkit.Mvvm >= 8.2.1",
+      "CommunityToolkit.Mvvm >= 8.2.2",
       "MahApps.Metro.IconPacks.Material >= 5.0.0",
       "Microsoft.Extensions.Hosting >= 7.0.1",
-      "WPF-UI >= 3.0.0-preview.4"
+      "WPF-UI >= 3.0.4"
     ]
   },
   "packageFolders": {
@@ -1873,7 +1763,7 @@
         "dependencies": {
           "CommunityToolkit.Mvvm": {
             "target": "Package",
-            "version": "[8.2.1, )"
+            "version": "[8.2.2, )"
           },
           "MahApps.Metro.IconPacks.Material": {
             "target": "Package",
@@ -1885,7 +1775,7 @@
           },
           "WPF-UI": {
             "target": "Package",
-            "version": "[3.0.0-preview.4, )"
+            "version": "[3.0.4, )"
           }
         },
         "imports": [

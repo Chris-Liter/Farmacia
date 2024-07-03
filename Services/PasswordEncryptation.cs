@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography;
+﻿using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Farmacia.Services
 {
@@ -17,7 +13,7 @@ namespace Farmacia.Services
             }
             using (SHA256 sha256 = SHA256.Create())
             {
-                if(password.Length > 20)
+                if (password.Length > 20)
                 {
                     return password;
                 }
@@ -33,12 +29,12 @@ namespace Farmacia.Services
                     }
 
                     return sb.ToString();
-    
+
                 }
 
             }
 
         }
-        
+
     }
 }
