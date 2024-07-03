@@ -10,9 +10,6 @@
     Width="1220"
     Height="960"
     mc:Ignorable="d">
-    <Page.DataContext>
-        <inventario:InventoryViewModel />
-    </Page.DataContext>
     <Page.Resources>
         <SolidColorBrush x:Key="btnColorPrimario" Color="#304FFE" />
         <SolidColorBrush x:Key="btnColorSecundario" Color="#FFFFFF" />
@@ -99,7 +96,7 @@
                                 Name="btn"
                                 Grid.Column="1"
                                 Margin="20,10,20,10"
-                                Click="btn_Click"
+                                Command="{Binding Open}"
                                 Content="Agregar Producto"
                                 FontSize="25"
                                 Style="{DynamicResource btnPrimario}" />

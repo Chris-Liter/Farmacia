@@ -9,14 +9,17 @@ using System.Windows;
 
 namespace Farmacia.ViewModel
 {
-    public class InventoryViewModel : ProductsModel
+
+    public class InventoryViewModel : ProductsModel, IEntityView
     {
         public RelayCommand EditarProducto { get; set; }
         public RelayCommand CreateOrUpdate {  get; set; }
         public RelayCommand DeleteProduct { get; set; }
+        public RelayCommand Open {  get; set; }
 
         public ObservableCollection<ProductsModel> productos;
         public ProductsModel selectedProduct;
+        private readonly IEntityView entityView;
 
         public string search;
 
@@ -42,13 +45,15 @@ namespace Farmacia.ViewModel
             get { return selectedProduct; }
             set { selectedProduct = value; OnPropertyChanged(); }
         }
-        public InventoryViewModel()
+        public InventoryViewModel(IEntityView entityView)
         {
             Productos = new ObservableCollection<ProductsModel>();
             EditarProducto = new RelayCommand(async () => await Editar());
             CreateOrUpdate = new RelayCommand(async () => await CreateOrUpdateProducto());
             DeleteProduct = new RelayCommand(async () => await Delete());
+            Open = new RelayCommand(async () => await Abrir());
             Update();
+            this.entityView = entityView;
         }
         public ObservableCollection<ProductsModel> Productos { get { return productos; } set { productos = value; OnPropertyChanged(nameof(Productos)); } }
 
@@ -79,7 +84,7 @@ namespace Farmacia.ViewModel
         public async Task Update()
         {
             string url = "http://localhost:8080/api/Producto";
-
+            Productos.Clear();
             using (HttpClient client = new HttpClient())
             {
                 var response = await client.GetAsync(url);
@@ -105,7 +110,7 @@ namespace Farmacia.ViewModel
             {
                 if (SelectedProduct != null)
                 {
-                    ManipularInventory inventory = new ManipularInventory(SelectedProduct);
+                    ManipularInventory inventory = new ManipularInventory(this,SelectedProduct);
                     if (inventory != null)
                     {
                         inventory.Show();
@@ -117,6 +122,20 @@ namespace Farmacia.ViewModel
                 }
             }
             catch (Exception ex)
+            {
+
+            }
+        }
+        public async Task Abrir()
+        {
+            try
+            {
+                ManipularInventory inventory = new ManipularInventory(this);
+                if (inventory != null)
+                {
+                    inventory.Show();
+                }
+            }catch (Exception ex)
             {
 
             }
@@ -140,7 +159,7 @@ namespace Farmacia.ViewModel
                         {
                             var miVentana = ManipularInventory.Current;
                             miVentana.Close();
-                            await Update();
+                            entityView.update();
                             MessageBox.Show("Se a modificado el producto con exito", "Exito", MessageBoxButton.OK);
                         }
                         else
@@ -159,7 +178,7 @@ namespace Farmacia.ViewModel
                         {
                             var miVentana = ManipularInventory.Current;
                             miVentana.Close();
-                            await Update();
+                            entityView.update();
                             MessageBox.Show("Se a creado el producto con exito", "Exito", MessageBoxButton.OK);
                         }
                         else
@@ -186,11 +205,16 @@ namespace Farmacia.ViewModel
                     using(HttpClient client = new HttpClient())
                     {
                         var response = await client.DeleteAsync(url);
-                        await Update();
+                        update();
                     }
 
                 }
             }
+        }
+
+        public async void update()
+        {
+            await Update();
         }
     }
 }

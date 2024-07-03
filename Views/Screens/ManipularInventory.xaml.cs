@@ -10,17 +10,20 @@ namespace Farmacia.Views.Screens
     public partial class ManipularInventory : Window
     {
         private readonly InventoryViewModel inventario;
-        public static ManipularInventory Current {  get; set; }
-        public ManipularInventory()
+        public static ManipularInventory Current { get; set; }
+        private readonly IEntityView entityView;
+        public ManipularInventory(IEntityView entityView)
         {
-            inventario = new InventoryViewModel();
+            this.entityView = entityView;
+            inventario = new InventoryViewModel(entityView);
             Current = this;  
             InitializeComponent();
             DataContext = inventario;
         }
-        public ManipularInventory(ProductsModel product)
+        public ManipularInventory(IEntityView entityView,ProductsModel product)
         {
-            inventario = new InventoryViewModel();
+            this.entityView = entityView;
+            inventario = new InventoryViewModel(entityView);
             InitializeComponent();
             Current = this;
             DataContext = inventario;

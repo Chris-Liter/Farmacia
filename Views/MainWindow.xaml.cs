@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using Farmacia.ViewModel;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 
@@ -10,6 +11,7 @@ namespace Farmacia.Views
     public partial class MainWindow : Window
     {
         public Frame miFrame => PagesNavigation;
+        IEntityView entity;
         public MainWindow()
         {
             InitializeComponent();
@@ -42,6 +44,7 @@ namespace Farmacia.Views
 
         private void rdSounds_Click(object sender, RoutedEventArgs e)
         {
+            //PagesNavigation.Navigate(new InventarioView(entity));
             PagesNavigation.Navigate(new System.Uri("Views/InventarioView.xaml", UriKind.RelativeOrAbsolute));
         }
 
