@@ -83,7 +83,7 @@ namespace Farmacia.ViewModel
 
         public async Task Update()
         {
-            string url = "http://localhost:8080/api/Producto";
+            string url = $"{URLRep.URL}/Producto";
             Productos.Clear();
             using (HttpClient client = new HttpClient())
             {
@@ -145,7 +145,7 @@ namespace Farmacia.ViewModel
         {
             try
             {
-                string url = "http://localhost:8080/api/Producto";
+                string url = $"{URLRep.URL}/Producto";
                 using (HttpClient client = new HttpClient())
                 {
                     if (SelectedProduct != null)
@@ -201,7 +201,7 @@ namespace Farmacia.ViewModel
                 MessageBox.Show("Seguro que quieres eliminar este producto?", "Advertencia", MessageBoxButton.YesNo);
                 if(MessageBoxResult.Yes.ToString() == "Yes")
                 {
-                    string url = $"http://localhost:8080/api/Producto/{SelectedProduct.id}";
+                    string url = $"{URLRep.URL}/Producto/{SelectedProduct.id}";
                     using(HttpClient client = new HttpClient())
                     {
                         var response = await client.DeleteAsync(url);

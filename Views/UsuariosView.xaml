@@ -9,16 +9,194 @@
     Width="1440"
     Height="960"
     mc:Ignorable="d">
+    <Page.Resources>
+        <SolidColorBrush x:Key="btnColorPrimario" Color="#304FFE" />
+        <SolidColorBrush x:Key="btnColorSecundario" Color="#FFFFFF" />
 
+        <SolidColorBrush x:Key="btnColorTernario" Color="#0026CA" />
+        <Style x:Key="btnPrimario" TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="Foreground" Value="{DynamicResource btnColorTernario}" />
+            <Setter Property="BorderBrush" Value="{DynamicResource btnColorPrimario}" />
+            <Setter Property="FontWeight" Value="400" />
+
+            <Setter Property="Padding" Value="12,6,12,6" />
+            <Setter Property="BorderThickness" Value="2" />
+            <Setter Property="Width" Value="Auto" />
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border
+                            x:Name="btnBorder"
+                            MaxHeight="{TemplateBinding MaxHeight}"
+                            Padding="{TemplateBinding Padding}"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="10"
+                            SnapsToDevicePixels="True">
+                            <ContentPresenter
+                                x:Name="ContentPresenter"
+                                Margin="{TemplateBinding Margin}"
+                                HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
+                                VerticalAlignment="{TemplateBinding VerticalAlignment}"
+                                Focusable="False"
+                                RecognizesAccessKey="True"
+                                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="btnBorder" Property="Background" Value="#304FFE" />
+                                <Setter Property="Content" Value="#ffffff" />
+
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="btnBorder" Property="Background" Value="White" />
+
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+        </Style>
+    </Page.Resources>
     <Grid>
         <Border Background="{DynamicResource SecundaryBackgroundColor}" CornerRadius="5">
             <StackPanel>
-                <TextBlock
-                    Margin="30,5,0,0"
-                    FontSize="20"
-                    FontWeight="Bold"
-                    Text="Usuarios" />
+                <StackPanel Orientation="Horizontal">
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <TextBlock
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            Margin="30,5,0,10"
+                            VerticalAlignment="Center"
+                            FontSize="20"
+                            FontWeight="Bold"
+                            Text="Usuarios" />
+
+                        <StackPanel
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            Orientation="Horizontal">
+                            <Button
+                                Name="btn"
+                                Grid.Column="1"
+                                Margin="20,10,20,10"
+                                Content="Agregar Usuario"
+                                FontSize="25"
+                                FontWeight="Bold"
+                                Style="{DynamicResource btnPrimario}" />
+                            <Button
+                                Name="btnEditar"
+                                Grid.Column="1"
+                                Margin="20,10,20,10"
+                                Content="Editar Usuario"
+                                FontSize="25"
+                                FontWeight="Bold"
+                                Style="{DynamicResource btnPrimario}" />
+                            <Button
+                                Name="btnEliminar"
+                                Grid.Column="1"
+                                Margin="20,10,20,10"
+                                Command="{Binding DeleteUser}"
+                                Content="Eliminar Usuario"
+                                FontSize="25"
+                                FontWeight="Bold"
+                                Style="{DynamicResource btnPrimario}" />
+
+                        </StackPanel>
+                        <StackPanel Grid.Row="1">
+                            <TextBox
+                                Width="307"
+                                Margin="35,0,0,0"
+                                Background="Gray"
+                                Foreground="Black"
+                                Style="{StaticResource ModernTextBox}"
+                                Text="{Binding searchUser, Mode=TwoWay}" />
+                        </StackPanel>
+                    </Grid>
+                </StackPanel>
+                <StackPanel>
+                    <DataGrid
+                        x:Name="ItemsDatagrid"
+                        Margin="15"
+                        AutoGenerateColumns="False"
+                        BorderBrush="Black"
+                        CanUserAddRows="True"
+                        CanUserReorderColumns="False"
+                        CanUserResizeColumns="False"
+                        ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}"
+                        ItemsSource="{Binding Users}"
+                        RowStyle="{DynamicResource DataGridRowStyle1}"
+                        SelectedItem="{Binding UserSelected, Mode=TwoWay}"
+                        SelectionMode="Single">
+
+                        <DataGrid.Columns>
+                            <DataGridTemplateColumn
+                                Width="Auto"
+                                CanUserResize="False"
+                                Header="#"
+                                IsReadOnly="True" />
+                            <DataGridTemplateColumn
+                                Width="*"
+                                CanUserSort="False"
+                                Header="Nombre">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <StackPanel>
+                                            <TextBlock
+                                                FontSize="20"
+                                                Foreground="Black"
+                                                Text="{Binding nombre}" />
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn
+                                Width="*"
+                                CanUserSort="False"
+                                Header="Email">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <StackPanel>
+                                            <TextBlock
+                                                FontSize="20"
+                                                Foreground="Black"
+                                                Text="{Binding email}" />
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn
+                                Width="*"
+                                CanUserSort="False"
+                                Header="Contraseña">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock
+                                            FontSize="20"
+                                            Foreground="Black"
+                                            Text="{Binding passwords}" />
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </StackPanel>
             </StackPanel>
+
         </Border>
     </Grid>
 </Page>

@@ -1,4 +1,5 @@
-﻿using System.Windows.Controls;
+﻿using Farmacia.ViewModel;
+using System.Windows.Controls;
 
 namespace Farmacia.Views
 {
@@ -7,9 +8,12 @@ namespace Farmacia.Views
     /// </summary>
     public partial class UsuariosView : Page
     {
+        private readonly UsuariosViewModel viewModel;
         public UsuariosView()
         {
             InitializeComponent();
+            viewModel = new UsuariosViewModel();
+            DataContext = viewModel;
         }
     }
 }

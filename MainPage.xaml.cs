@@ -22,15 +22,19 @@ namespace Farmacia
 
         private void PasswordBox_KeyDown(object sender, KeyEventArgs e)
         {
-
+            if (e.Key == Key.Enter)
+            {
+                loginViewModel.LoginCommand.Execute(null);
+            }
         }
 
         private void PasswordBox_PasswordChanged(object sender, RoutedEventArgs e)
         {
             if (sender is PasswordBox passwordBox)
             {
-                loginViewModel.Password = passwordBox.Password;
+                loginViewModel.passwords = passwordBox.Password;
             }
         }
+
     }
 }

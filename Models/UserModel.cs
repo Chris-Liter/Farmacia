@@ -1,31 +1,43 @@
 ﻿namespace Farmacia.Models
 {
-    public class UserModel
+    public class UserModel : BaseModel
     {
-        private int id;
-        private string name;
-        private string password;
-        private Permisos permiso;
+        private int Id;
+        private string Nombre;
+        private string Email;
+        private string Passwords;
+        private Permisos Permiso;
+        private string Fechanacimiento;
 
-        public int Id
+        public int id
         {
-            get { return id; }
-            set { id = value; }
+            get { return Id; }
+            set { Id = value; OnPropertyChanged(); }
         }
-        public string Name
+        public string nombre
         {
-            get { return name; }
-            set { name = value; }
+            get { return Nombre; }
+            set { Nombre = value; OnPropertyChanged(); }
         }
-        public string Password
+        public string email
         {
-            get { return password; }
-            set { password = value; }
+            get { return Email; }
+            set { Email = value; OnPropertyChanged(); }
         }
-        public Permisos Permiso
+        public string passwords
         {
-            get { return permiso; }
-            set { permiso = value; }
+            get { return Passwords; }
+            set { Passwords = value; OnPropertyChanged(); }
+        }
+        public string fechanacimiento
+        {
+            get { return Fechanacimiento; }
+            set { Fechanacimiento = value; OnPropertyChanged(); }
+        }
+        public Permisos permiso
+        {
+            get { return Permiso; }
+            set { Permiso = value; OnPropertyChanged(); }
         }
 
 

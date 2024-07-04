@@ -39,12 +39,13 @@
                     </LinearGradientBrush>
                 </Border.Background>
                 <StackPanel Margin="25" VerticalAlignment="Center">
-                    <Label
+                    <TextBlock
                         Margin="25,25,25,100"
                         HorizontalAlignment="Center"
-                        Content="Inicia Sesion"
-                        FontSize="35"
-                        FontWeight="Bold" />
+                        FontSize="55"
+                        FontWeight="Bold"
+                        Foreground="White"
+                        Text="Inicia Sesion" />
                     <TextBlock
                         Margin="0,0,200,0"
                         HorizontalAlignment="Center"
@@ -65,7 +66,7 @@
                         FontSize="20"
                         FontWeight="Medium"
                         Foreground="White"
-                        Text="{Binding Name, Mode=TwoWay}">
+                        Text="{Binding nombre, Mode=TwoWay}">
                         <TextBox.Background>
                             <ImageBrush AlignmentX="Left" Stretch="Uniform" />
                         </TextBox.Background>
@@ -105,7 +106,7 @@
                         Content="Iniciar Sesión"
                         Cursor="Hand"
                         FontFamily="Montserrat"
-                        FontSize="30"
+                        FontSize="35"
                         FontWeight="Heavy"
                         Foreground="White">
                         <Button.Style>
@@ -124,17 +125,20 @@
                                     Width="250"
                                     Height="60"
                                     Background="{TemplateBinding Background}"
-                                    CornerRadius="20">
-                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                    CornerRadius="10">
+                                    <ContentPresenter
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center"
+                                        SnapsToDevicePixels="True" />
                                 </Border>
                             </ControlTemplate>
                         </Button.Template>
                         <Button.Background>
                             <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
                                 <GradientStop Offset="0" Color="#673AB7" />
-                                <GradientStop Offset="0.5" Color="#AA00FF" />
-                                <GradientStop Offset="0.8" Color="Blue" />
-                                <GradientStop Offset="1" Color="Beige" />
+                                <GradientStop Offset="0.6" Color="#1f40FF" />
+                                <GradientStop Offset="0.3" Color="BlueViolet" />
+                                <GradientStop Offset="1" Color="DarkSlateBlue" />
                             </LinearGradientBrush>
                         </Button.Background>
                     </Button>

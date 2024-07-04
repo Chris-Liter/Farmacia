@@ -23,7 +23,7 @@ namespace Farmacia.ViewModel
                 {
                     string url = "http://localhost:8080/api/Usuarios";
                     //UserModel usuariosView = this;
-                    var resp = await client.GetAsync($"{url}/login/{Name}/{Password}");
+                    var resp = await client.GetAsync($"{url}/login/{nombre}/{passwords}");
                     if (!resp.IsSuccessStatusCode)
                     {
                         MessageBox.Show("Contraseña o usuario incorrecto", "ERROR", MessageBoxButton.OK);
