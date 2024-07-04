@@ -9,11 +9,13 @@ namespace Farmacia.Views
     public partial class UsuariosView : Page
     {
         private readonly UsuariosViewModel viewModel;
+        private readonly IEntityView entityView;
         public UsuariosView()
         {
             InitializeComponent();
-            viewModel = new UsuariosViewModel();
+            viewModel = new UsuariosViewModel(entityView);
             DataContext = viewModel;
+            
         }
     }
 }

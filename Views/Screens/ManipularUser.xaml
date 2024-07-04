@@ -1,0 +1,143 @@
+﻿<Window
+    x:Class="Farmacia.Views.Screens.ManipularUser"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Farmacia.Views.Screens"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="ManipularUser"
+    Width="650"
+    Height="400"
+    mc:Ignorable="d">
+    <Grid>
+        <Border>
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
+                    <GradientStop Offset="0.6" Color="#060531" />
+                    <GradientStop Offset="0.10" Color="#4A148C" />
+                    <GradientStop Offset="0.25" Color="#081462" />
+                    <GradientStop Offset="0.7" Color="#081043" />
+                </LinearGradientBrush>
+            </Border.Background>
+            <Grid Margin="20">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+
+                <TextBlock
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Margin="15,5"
+                    VerticalAlignment="Center"
+                    FontSize="20"
+                    Foreground="White"
+                    Text="Nombre:" />
+                <TextBox
+                    x:Name="lbl_nombre"
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Margin="15,5"
+                    VerticalAlignment="Center"
+                    FontFamily="20"
+                    Text="{Binding nombre}" />
+
+                <!--  Nombre  -->
+                <TextBlock
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    Margin="15,5"
+                    VerticalAlignment="Center"
+                    FontSize="20"
+                    Foreground="White"
+                    Text="Correo:" />
+                <TextBox
+                    x:Name="lbl_email"
+                    Grid.Row="2"
+                    Grid.Column="1"
+                    Margin="15,5"
+                    VerticalAlignment="Center"
+                    FontFamily="20"
+                    Text="{Binding email}" />
+
+                <!--  Stock  -->
+                <TextBlock
+                    Grid.Row="3"
+                    Grid.Column="0"
+                    Margin="15,5"
+                    VerticalAlignment="Center"
+                    FontSize="20"
+                    Foreground="White"
+                    Text="Contraseña:" />
+                <TextBox
+                    x:Name="lbl_password"
+                    Grid.Row="3"
+                    Grid.Column="1"
+                    Margin="15,5"
+                    VerticalAlignment="Center"
+                    FontFamily="20"
+                    Text="{Binding passwords}" />
+
+                <!--  Iva  -->
+                <TextBlock
+                    Grid.Row="4"
+                    Grid.Column="0"
+                    Margin="15,5"
+                    VerticalAlignment="Center"
+                    FontSize="20"
+                    Foreground="White"
+                    Text="Fecha de nacimiento:" />
+                <ComboBox
+                    x:Name="box_permiso"
+                    Grid.Row="5"
+                    Grid.Column="1"
+                    Margin="15,5"
+                    VerticalAlignment="Center"
+                    FontFamily="20"
+                    SelectedItem="{Binding permisoSeleccionado, Mode=TwoWay}"
+                    Text="{Binding permisos}" />
+                <TextBlock
+                    Grid.Row="5"
+                    Grid.Column="0"
+                    Margin="15,5"
+                    VerticalAlignment="Center"
+                    FontSize="20"
+                    Foreground="White"
+                    Text="Permiso:" />
+                <DatePicker
+                    x:Name="datePicker"
+                    Grid.Row="4"
+                    Grid.Column="1"
+                    Margin="15,0"
+                    FontFamily="20"
+                    SelectedDateChanged="DatePicker_SelectedDateChanged" />
+
+                <!--  Guardar Button  -->
+                <StackPanel
+                    Grid.Row="6"
+                    Grid.ColumnSpan="2"
+                    Margin="15,20"
+                    HorizontalAlignment="Stretch">
+                    <Button
+                        HorizontalContentAlignment="Center"
+                        Command="{Binding AddOrEditUser, Mode=TwoWay}"
+                        Content="Guardar"
+                        FontSize="30"
+                        FontStretch="UltraExpanded"
+                        FontWeight="Bold"
+                        Style="{DynamicResource btnPrimario}" />
+                </StackPanel>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

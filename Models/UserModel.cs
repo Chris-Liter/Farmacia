@@ -2,14 +2,15 @@
 {
     public class UserModel : BaseModel
     {
-        private int Id;
+        private double Id;
         private string Nombre;
         private string Email;
         private string Passwords;
-        private Permisos Permiso;
+        private PermisosUsuario Permiso;
+        private char Permisos;
         private string Fechanacimiento;
 
-        public int id
+        public double id
         {
             get { return Id; }
             set { Id = value; OnPropertyChanged(); }
@@ -34,10 +35,31 @@
             get { return Fechanacimiento; }
             set { Fechanacimiento = value; OnPropertyChanged(); }
         }
-        public Permisos permiso
+        public char permisos
         {
-            get { return Permiso; }
-            set { Permiso = value; OnPropertyChanged(); }
+            get { return Permisos; }
+            set { Permisos = value; OnPropertyChanged(); } 
+        }
+
+        public PermisosUsuario permiso
+        {
+            get { if (permisos == 1)
+                {
+                    return PermisosUsuario.administrador;
+                }
+                else
+                {
+                    return PermisosUsuario.empleado;
+                }
+            }
+            set { if (permisos == 1) {
+                    Permiso = PermisosUsuario.administrador;
+                }
+                else
+                {
+                    Permiso = PermisosUsuario.empleado;
+                }
+                OnPropertyChanged(); }
         }
 
 

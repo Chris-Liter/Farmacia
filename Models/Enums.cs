@@ -10,7 +10,7 @@
         proveedor,
         comprador
     }
-    public enum Permisos
+    public enum PermisosUsuario
     {
         empleado,
         administrador

@@ -94,6 +94,7 @@
                                 Name="btn"
                                 Grid.Column="1"
                                 Margin="20,10,20,10"
+                                Command="{Binding OpenCreate}"
                                 Content="Agregar Usuario"
                                 FontSize="25"
                                 FontWeight="Bold"
@@ -102,6 +103,7 @@
                                 Name="btnEditar"
                                 Grid.Column="1"
                                 Margin="20,10,20,10"
+                                Command="{Binding OpenEdit}"
                                 Content="Editar Usuario"
                                 FontSize="25"
                                 FontWeight="Bold"
@@ -182,13 +184,13 @@
                             <DataGridTemplateColumn
                                 Width="*"
                                 CanUserSort="False"
-                                Header="Contraseña">
+                                Header="Permisos">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
                                         <TextBlock
                                             FontSize="20"
                                             Foreground="Black"
-                                            Text="{Binding passwords}" />
+                                            Text="{Binding permiso}" />
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>

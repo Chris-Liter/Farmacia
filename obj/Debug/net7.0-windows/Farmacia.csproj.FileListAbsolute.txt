@@ -74,3 +74,5 @@ C:\Users\jorge\source\repos\Farmacia\Farmacia\obj\Debug\net7.0-windows\refint\Fa
 C:\Users\jorge\source\repos\Farmacia\Farmacia\obj\Debug\net7.0-windows\Farmacia.pdb
 C:\Users\jorge\source\repos\Farmacia\Farmacia\obj\Debug\net7.0-windows\Farmacia.genruntimeconfig.cache
 C:\Users\jorge\source\repos\Farmacia\Farmacia\obj\Debug\net7.0-windows\ref\Farmacia.dll
+C:\Users\jorge\source\repos\Farmacia\Farmacia\obj\Debug\net7.0-windows\Views\Screens\ManipularUser.g.cs
+C:\Users\jorge\source\repos\Farmacia\Farmacia\obj\Debug\net7.0-windows\Views\Screens\ManipularUser.baml
