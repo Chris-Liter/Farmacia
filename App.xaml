@@ -109,14 +109,67 @@
                     </Trigger>
                 </Style.Triggers>
             </Style>
-            <Style x:Key="DataGridRowStyle2" TargetType="{x:Type DataGridRow}">
+            <Style x:Key="DataGridRowStyle1" TargetType="{x:Type DataGridRow}">
+                <Setter Property="Background" Value="White" />
+                <Setter Property="SnapsToDevicePixels" Value="True" />
+                <Setter Property="Validation.ErrorTemplate" Value="{x:Null}" />
+                <Setter Property="ValidationErrorTemplate">
+                    <Setter.Value>
+                        <ControlTemplate />
+                    </Setter.Value>
+                </Setter>
                 <Setter Property="Template">
                     <Setter.Value>
                         <ControlTemplate TargetType="{x:Type DataGridRow}">
-                            <Grid />
+                            <Border
+                                x:Name="DGR_Border"
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="#e0e0e0"
+                                BorderThickness="1"
+                                CornerRadius="5"
+                                SnapsToDevicePixels="False">
+                                <SelectiveScrollingGrid>
+                                    <SelectiveScrollingGrid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="*" />
+                                    </SelectiveScrollingGrid.ColumnDefinitions>
+                                    <SelectiveScrollingGrid.RowDefinitions>
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="Auto" />
+                                    </SelectiveScrollingGrid.RowDefinitions>
+                                    <DataGridCellsPresenter
+                                        Grid.Column="1"
+                                        ItemsPanel="{TemplateBinding ItemsPanel}"
+                                        SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                                    <DataGridDetailsPresenter
+                                        Grid.Row="1"
+                                        Grid.Column="1"
+                                        SelectiveScrollingGrid.SelectiveScrollingOrientation="Vertical"
+                                        Visibility="{TemplateBinding DetailsVisibility}" />
+                                    <DataGridRowHeader Grid.RowSpan="2" SelectiveScrollingGrid.SelectiveScrollingOrientation="Vertical" />
+                                </SelectiveScrollingGrid>
+                            </Border>
                         </ControlTemplate>
                     </Setter.Value>
                 </Setter>
+                <Style.Triggers>
+                    <Trigger Property="IsMouseOver" Value="True">
+                        <Setter Property="Background" Value="#f5f5f5" />
+                        <Setter Property="BorderBrush" Value="#aaa" />
+                    </Trigger>
+                    <Trigger Property="IsSelected" Value="True">
+                        <Setter Property="Background" Value="#92BEFF" />
+                        <Setter Property="Foreground" Value="#000000" />
+                    </Trigger>
+
+                    <MultiTrigger>
+                        <MultiTrigger.Conditions>
+                            <Condition Property="IsSelected" Value="True" />
+                            <Condition Property="Selector.IsSelectionActive" Value="False" />
+                        </MultiTrigger.Conditions>
+                        <Setter Property="Background" Value="#dfdfdf" />
+                    </MultiTrigger>
+                </Style.Triggers>
             </Style>
             <Style x:Key="DataGridStyle1" TargetType="{x:Type DataGrid}">
                 <Setter Property="Background" Value="Transparent" />
@@ -160,7 +213,7 @@
                 </Setter>
             </Style>
 
-            <Style x:Key="DataGridRowStyle1" TargetType="{x:Type DataGridRow}">
+            <Style x:Key="DataGridRowStyle2" TargetType="{x:Type DataGridRow}">
                 <Setter Property="Background" Value="White" />
                 <Setter Property="SnapsToDevicePixels" Value="True" />
                 <Setter Property="Validation.ErrorTemplate" Value="{x:Null}" />
