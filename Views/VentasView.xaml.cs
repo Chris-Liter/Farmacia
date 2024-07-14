@@ -1,4 +1,6 @@
-﻿using System.Windows.Controls;
+﻿using Farmacia.ViewModel;
+using Farmacia.Views.Screens;
+using System.Windows.Controls;
 
 namespace Farmacia.Views
 {
@@ -7,9 +9,22 @@ namespace Farmacia.Views
     /// </summary>
     public partial class VentasView : Page
     {
+        public IEntityView entityView {  get; set; }
         public VentasView()
         {
             InitializeComponent();
+            DataContext = new VentasViewModel();
+        }
+
+        private void DatePicker_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void TextBox_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+            ListaProductos listaProductos = new ListaProductos(entityView);
+            listaProductos.Show();
         }
     }
 }

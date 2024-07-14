@@ -5,10 +5,10 @@
         private double Id;
         private string Nombre;
         private string Email;
-        private string Passwords;
-        private PermisosUsuario Permiso;
-        private char Permisos;
         private string Fechanacimiento;
+        private string Passwords;
+        private string Permisos;
+        //private char Permisos;
 
         public double id
         {
@@ -27,7 +27,7 @@
         }
         public string passwords
         {
-            get { return Passwords; }
+            get { return Passwords; }   
             set { Passwords = value; OnPropertyChanged(); }
         }
         public string fechanacimiento
@@ -35,31 +35,15 @@
             get { return Fechanacimiento; }
             set { Fechanacimiento = value; OnPropertyChanged(); }
         }
-        public char permisos
+       
+        public string permisos
         {
-            get { return Permisos; }
-            set { Permisos = value; OnPropertyChanged(); } 
-        }
-
-        public PermisosUsuario permiso
-        {
-            get { if (permisos == 1)
-                {
-                    return PermisosUsuario.administrador;
-                }
-                else
-                {
-                    return PermisosUsuario.empleado;
-                }
+            get
+            {
+                return Permisos;
+                
             }
-            set { if (permisos == 1) {
-                    Permiso = PermisosUsuario.administrador;
-                }
-                else
-                {
-                    Permiso = PermisosUsuario.empleado;
-                }
-                OnPropertyChanged(); }
+            set { Permisos = value; OnPropertyChanged(); }
         }
 
 

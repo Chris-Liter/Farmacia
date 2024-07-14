@@ -169,7 +169,7 @@ namespace Farmacia.ViewModel
                     }
                     else
                     {
-                        ProductsModel model = new ProductsModel() { id = 0, codigo_producto = codigo_producto, iva = iva, nombre = nombre, precio = precio, stock = stock };
+                        ProductsModel model = new () { id = 0, codigo_producto = codigo_producto, iva = iva, nombre = nombre, precio = precio, stock = stock };
                         string json = JsonSerializer.Serialize(model);
 
                         StringContent contenido = new StringContent(json, Encoding.UTF8, "application/json");

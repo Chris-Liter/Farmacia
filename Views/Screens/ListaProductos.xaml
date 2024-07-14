@@ -1,0 +1,96 @@
+﻿<Window
+    x:Class="Farmacia.Views.Screens.ListaProductos"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Farmacia.Views.Screens"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="ListaProductos"
+    Width="800"
+    Height="450"
+    mc:Ignorable="d">
+    <Grid>
+        <StackPanel>
+            <DataGrid
+                x:Name="ItemsDatagrid"
+                Margin="15"
+                AutoGenerateColumns="False"
+                BorderBrush="Black"
+                CanUserAddRows="True"
+                CanUserReorderColumns="False"
+                CanUserResizeColumns="False"
+                ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}"
+                ItemsSource="{Binding Productos}"
+                RowStyle="{DynamicResource DataGridRowStyle1}"
+                SelectedItem="{Binding SelectedProduct, Mode=TwoWay}"
+                SelectionMode="Single">
+
+                <DataGrid.Columns>
+                    <DataGridTemplateColumn
+                        Width="Auto"
+                        CanUserResize="False"
+                        Header="#"
+                        IsReadOnly="True" />
+                    <DataGridTemplateColumn
+                        Width="*"
+                        CanUserSort="False"
+                        Header="Codigo">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel>
+                                    <TextBlock
+                                        FontSize="20"
+                                        Foreground="Black"
+                                        Text="{Binding codigo_producto}" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn
+                        Width="*"
+                        CanUserSort="False"
+                        Header="Nombre">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel>
+                                    <TextBlock
+                                        FontSize="20"
+                                        Foreground="Black"
+                                        Text="{Binding nombre}" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn
+                        Width="*"
+                        CanUserSort="False"
+                        Header="Precio">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel>
+                                    <TextBlock
+                                        FontSize="20"
+                                        Foreground="Black"
+                                        Text="{Binding precio}" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn
+                        Width="*"
+                        CanUserSort="False"
+                        Header="Stock">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock
+                                    FontSize="20"
+                                    Foreground="Black"
+                                    Text="{Binding stock}" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+    </Grid>
+</Window>

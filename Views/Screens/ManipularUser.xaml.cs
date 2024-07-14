@@ -46,7 +46,7 @@ namespace Farmacia.Views.Screens
             lbl_nombre.Text = user.nombre;
             lbl_email.Text = user.email;
             lbl_password.Text = user.passwords;
-            box_permiso.Text = user.permiso.ToString();
+            box_permiso.Text = user.permisos.ToString();
             box_permiso.Items.Add("Administrador");
             box_permiso.Items.Add("Empleado");
             /////////////

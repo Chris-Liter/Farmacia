@@ -10,10 +10,10 @@
         proveedor,
         comprador
     }
-    public enum PermisosUsuario
+    public enum Permisos
     {
-        empleado,
-        administrador
+        Empleado = 0,
+        Administrador = 1
     }
     public enum EstadoFactura
     {

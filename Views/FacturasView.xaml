@@ -12,12 +12,13 @@
 
     <Grid>
         <Border Background="{DynamicResource SecundaryBackgroundColor}" CornerRadius="5">
-            <StackPanel>
+            <StackPanel Orientation="Vertical">
                 <TextBlock
                     Margin="30,5,0,0"
                     FontSize="20"
                     FontWeight="Bold"
                     Text="Facturas" />
+                <StackPanel />
             </StackPanel>
         </Border>
     </Grid>

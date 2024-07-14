@@ -10,11 +10,11 @@ namespace Farmacia.Views
     /// </summary>
     public partial class InventarioView : Page
     {
-        private ManipularInventory manipularInventory;
+        //private ManipularInventory manipularInventory;
         private IEntityView entityView {  get; set; }
         public InventarioView()
         {
-         //   manipularInventory = new ManipularInventory(entityView);
+         // manipularInventory = new ManipularInventory(entityView);
             InitializeComponent();
             DataContext = new InventoryViewModel(entityView);
         }
