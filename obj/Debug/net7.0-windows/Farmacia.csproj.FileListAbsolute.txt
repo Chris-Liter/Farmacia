@@ -16,6 +16,8 @@ C:\Users\jorge\source\repos\Farmacia\Farmacia\bin\Debug\net7.0-windows\Microsoft
 C:\Users\jorge\source\repos\Farmacia\Farmacia\bin\Debug\net7.0-windows\Microsoft.Extensions.Configuration.UserSecrets.dll
 C:\Users\jorge\source\repos\Farmacia\Farmacia\bin\Debug\net7.0-windows\Microsoft.Extensions.DependencyInjection.dll
 C:\Users\jorge\source\repos\Farmacia\Farmacia\bin\Debug\net7.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\jorge\source\repos\Farmacia\Farmacia\bin\Debug\net7.0-windows\Microsoft.Extensions.Diagnostics.dll
+C:\Users\jorge\source\repos\Farmacia\Farmacia\bin\Debug\net7.0-windows\Microsoft.Extensions.Diagnostics.Abstractions.dll
 C:\Users\jorge\source\repos\Farmacia\Farmacia\bin\Debug\net7.0-windows\Microsoft.Extensions.FileProviders.Abstractions.dll
 C:\Users\jorge\source\repos\Farmacia\Farmacia\bin\Debug\net7.0-windows\Microsoft.Extensions.FileProviders.Physical.dll
 C:\Users\jorge\source\repos\Farmacia\Farmacia\bin\Debug\net7.0-windows\Microsoft.Extensions.FileSystemGlobbing.dll
@@ -31,7 +33,14 @@ C:\Users\jorge\source\repos\Farmacia\Farmacia\bin\Debug\net7.0-windows\Microsoft
 C:\Users\jorge\source\repos\Farmacia\Farmacia\bin\Debug\net7.0-windows\Microsoft.Extensions.Options.dll
 C:\Users\jorge\source\repos\Farmacia\Farmacia\bin\Debug\net7.0-windows\Microsoft.Extensions.Options.ConfigurationExtensions.dll
 C:\Users\jorge\source\repos\Farmacia\Farmacia\bin\Debug\net7.0-windows\Microsoft.Extensions.Primitives.dll
+C:\Users\jorge\source\repos\Farmacia\Farmacia\bin\Debug\net7.0-windows\System.Diagnostics.DiagnosticSource.dll
+C:\Users\jorge\source\repos\Farmacia\Farmacia\bin\Debug\net7.0-windows\System.Diagnostics.EventLog.dll
+C:\Users\jorge\source\repos\Farmacia\Farmacia\bin\Debug\net7.0-windows\System.Text.Encodings.Web.dll
+C:\Users\jorge\source\repos\Farmacia\Farmacia\bin\Debug\net7.0-windows\System.Text.Json.dll
 C:\Users\jorge\source\repos\Farmacia\Farmacia\bin\Debug\net7.0-windows\Wpf.Ui.dll
+C:\Users\jorge\source\repos\Farmacia\Farmacia\bin\Debug\net7.0-windows\runtimes\win\lib\net7.0\System.Diagnostics.EventLog.Messages.dll
+C:\Users\jorge\source\repos\Farmacia\Farmacia\bin\Debug\net7.0-windows\runtimes\win\lib\net7.0\System.Diagnostics.EventLog.dll
+C:\Users\jorge\source\repos\Farmacia\Farmacia\bin\Debug\net7.0-windows\runtimes\browser\lib\net7.0\System.Text.Encodings.Web.dll
 C:\Users\jorge\source\repos\Farmacia\Farmacia\obj\Debug\net7.0-windows\Farmacia.csproj.AssemblyReference.cache
 C:\Users\jorge\source\repos\Farmacia\Farmacia\obj\Debug\net7.0-windows\Assets\Icons\Icons.baml
 C:\Users\jorge\source\repos\Farmacia\Farmacia\obj\Debug\net7.0-windows\Styles\LightTheme.baml
@@ -42,6 +51,7 @@ C:\Users\jorge\source\repos\Farmacia\Farmacia\obj\Debug\net7.0-windows\Views\Fac
 C:\Users\jorge\source\repos\Farmacia\Farmacia\obj\Debug\net7.0-windows\Views\HomeView.g.cs
 C:\Users\jorge\source\repos\Farmacia\Farmacia\obj\Debug\net7.0-windows\Views\InventarioView.g.cs
 C:\Users\jorge\source\repos\Farmacia\Farmacia\obj\Debug\net7.0-windows\Views\MainWindow.g.cs
+C:\Users\jorge\source\repos\Farmacia\Farmacia\obj\Debug\net7.0-windows\Views\Screens\ListaProductos.g.cs
 C:\Users\jorge\source\repos\Farmacia\Farmacia\obj\Debug\net7.0-windows\Views\Screens\ManipularInventory.g.cs
 C:\Users\jorge\source\repos\Farmacia\Farmacia\obj\Debug\net7.0-windows\Views\Screens\ManipularUser.g.cs
 C:\Users\jorge\source\repos\Farmacia\Farmacia\obj\Debug\net7.0-windows\Views\UsuariosView.g.cs
@@ -60,6 +70,7 @@ C:\Users\jorge\source\repos\Farmacia\Farmacia\obj\Debug\net7.0-windows\Views\Fac
 C:\Users\jorge\source\repos\Farmacia\Farmacia\obj\Debug\net7.0-windows\Views\HomeView.baml
 C:\Users\jorge\source\repos\Farmacia\Farmacia\obj\Debug\net7.0-windows\Views\InventarioView.baml
 C:\Users\jorge\source\repos\Farmacia\Farmacia\obj\Debug\net7.0-windows\Views\MainWindow.baml
+C:\Users\jorge\source\repos\Farmacia\Farmacia\obj\Debug\net7.0-windows\Views\Screens\ListaProductos.baml
 C:\Users\jorge\source\repos\Farmacia\Farmacia\obj\Debug\net7.0-windows\Views\Screens\ManipularInventory.baml
 C:\Users\jorge\source\repos\Farmacia\Farmacia\obj\Debug\net7.0-windows\Views\Screens\ManipularUser.baml
 C:\Users\jorge\source\repos\Farmacia\Farmacia\obj\Debug\net7.0-windows\Views\UsuariosView.baml
@@ -76,5 +87,3 @@ C:\Users\jorge\source\repos\Farmacia\Farmacia\obj\Debug\net7.0-windows\refint\Fa
 C:\Users\jorge\source\repos\Farmacia\Farmacia\obj\Debug\net7.0-windows\Farmacia.pdb
 C:\Users\jorge\source\repos\Farmacia\Farmacia\obj\Debug\net7.0-windows\Farmacia.genruntimeconfig.cache
 C:\Users\jorge\source\repos\Farmacia\Farmacia\obj\Debug\net7.0-windows\ref\Farmacia.dll
-C:\Users\jorge\source\repos\Farmacia\Farmacia\obj\Debug\net7.0-windows\Views\Screens\ListaProductos.g.cs
-C:\Users\jorge\source\repos\Farmacia\Farmacia\obj\Debug\net7.0-windows\Views\Screens\ListaProductos.baml

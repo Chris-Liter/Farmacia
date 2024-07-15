@@ -1,6 +1,7 @@
 ﻿using Farmacia.ViewModel;
 using Farmacia.Views.Screens;
 using System.Windows.Controls;
+using System.Windows.Input;
 
 namespace Farmacia.Views
 {
@@ -18,13 +19,22 @@ namespace Farmacia.Views
 
         private void DatePicker_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            
         }
 
-        private void TextBox_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
+        private async void TextBox_KeyDown(object sender, KeyEventArgs e)
         {
-            ListaProductos listaProductos = new ListaProductos(entityView);
-            listaProductos.Show();
+            if (e.Key == Key.Enter)
+            {
+                ListaProductos listaProductos = new ListaProductos(entityView);
+                
+                listaProductos.Show();
+                Thread.Sleep(1000);
+                string busqueda = lbl_busqueda.Text;
+                await listaProductos.Aviso(busqueda);
+
+                //entityView.update();
+            }
         }
     }
 }

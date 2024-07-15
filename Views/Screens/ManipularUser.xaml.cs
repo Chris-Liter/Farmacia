@@ -2,6 +2,7 @@
 using Farmacia.ViewModel;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,7 +22,7 @@ namespace Farmacia.Views.Screens
     /// </summary>
     public partial class ManipularUser : Window
     {
-        private readonly IEntityView _entityView;
+        public IEntityView _entityView {  get; set; }
         private readonly UsuariosViewModel _usersViewModel;
         public static ManipularUser Current { get; private set; }
         
@@ -32,8 +33,6 @@ namespace Farmacia.Views.Screens
             InitializeComponent();
             DataContext = _usersViewModel;
             Current = this;
-            box_permiso.Items.Add("Administrador");
-            box_permiso.Items.Add("Empleado");
         }
 
         public ManipularUser(IEntityView entityView, UserModel user)
@@ -43,13 +42,21 @@ namespace Farmacia.Views.Screens
             InitializeComponent();
             DataContext = _usersViewModel;
             Current = this;
-            lbl_nombre.Text = user.nombre;
-            lbl_email.Text = user.email;
-            lbl_password.Text = user.passwords;
-            box_permiso.Text = user.permisos.ToString();
-            box_permiso.Items.Add("Administrador");
-            box_permiso.Items.Add("Empleado");
+            _usersViewModel.nombre = user.nombre;
+            _usersViewModel.email = user.email;
+            _usersViewModel.passwords = user.passwords;
+
+            DateTime parsedDate;
+            if (DateTime.TryParseExact(user.fechanacimiento, "dd/MM/yy", CultureInfo.InvariantCulture, DateTimeStyles.None, out parsedDate))
+                datePicker.SelectedDate = parsedDate;
+
+
+            if (user.permisos == "Administrador")
+                box_permiso.SelectedIndex = 0;
+            else
+                box_permiso.SelectedIndex = 1;
             /////////////
+            _usersViewModel.UserSelected = user;
 
         }
 
@@ -61,6 +68,15 @@ namespace Farmacia.Views.Screens
                 string formattedDate = selectedDate.Value.ToString("dd/MM/yy");
                 _usersViewModel.fechanacimiento = formattedDate;
             }
+        }
+
+        private void box_permiso_Loaded(object sender, RoutedEventArgs e)
+        {
+
+            box_permiso.Items.Add("Administrador");
+            box_permiso.Items.Add("Empleado");
+
+            box_permiso.SelectedIndex = 2;
         }
     }
 }

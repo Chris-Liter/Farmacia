@@ -104,6 +104,7 @@
                     Margin="15,5"
                     VerticalAlignment="Center"
                     FontFamily="20"
+                    Loaded="box_permiso_Loaded"
                     SelectedItem="{Binding permisoSeleccionado, Mode=TwoWay}"
                     Text="{Binding permisos}" />
                 <TextBlock

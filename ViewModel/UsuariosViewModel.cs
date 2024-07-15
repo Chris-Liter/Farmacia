@@ -137,7 +137,7 @@ namespace Farmacia.ViewModel
             {
                 if(UserSelected != null)
                 {
-                    ManipularUser manipularUser = new ManipularUser(_entityView, UserSelected);
+                    ManipularUser manipularUser = new ManipularUser(this, UserSelected);
                     if (manipularUser != null)
                     {
                         manipularUser.Show();

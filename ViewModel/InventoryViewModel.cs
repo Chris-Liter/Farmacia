@@ -53,6 +53,7 @@ namespace Farmacia.ViewModel
             DeleteProduct = new RelayCommand(async () => await Delete());
             Open = new RelayCommand(async () => await Abrir());
             Update();
+
             this.entityView = entityView;
         }
         public ObservableCollection<ProductsModel> Productos { get { return productos; } set { productos = value; OnPropertyChanged(nameof(Productos)); } }
