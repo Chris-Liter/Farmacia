@@ -10,14 +10,365 @@
     Height="960"
     mc:Ignorable="d">
 
+    <Page.Resources>
+        <SolidColorBrush x:Key="btnColorPrimario" Color="#304FFE" />
+        <SolidColorBrush x:Key="btnColorSecundario" Color="#FFFFFF" />
+
+        <SolidColorBrush x:Key="btnColorTernario" Color="#0026CA" />
+        <Style x:Key="btnPrimario" TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="Foreground" Value="{DynamicResource btnColorTernario}" />
+            <Setter Property="BorderBrush" Value="{DynamicResource btnColorPrimario}" />
+            <Setter Property="FontWeight" Value="400" />
+
+            <Setter Property="Padding" Value="12,6,12,6" />
+            <Setter Property="BorderThickness" Value="2" />
+            <Setter Property="Width" Value="Auto" />
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border
+                            x:Name="btnBorder"
+                            MaxHeight="{TemplateBinding MaxHeight}"
+                            Padding="{TemplateBinding Padding}"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="10"
+                            SnapsToDevicePixels="True">
+                            <ContentPresenter
+                                x:Name="ContentPresenter"
+                                Margin="{TemplateBinding Margin}"
+                                HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
+                                VerticalAlignment="{TemplateBinding VerticalAlignment}"
+                                Focusable="False"
+                                RecognizesAccessKey="True"
+                                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="btnBorder" Property="Background" Value="#304FFE" />
+                                <Setter Property="Content" Value="#ffffff" />
+
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="btnBorder" Property="Background" Value="White" />
+
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+        </Style>
+    </Page.Resources>
     <Grid>
-        <Border Background="{DynamicResource SecundaryBackgroundColor}" CornerRadius="5">
-            <StackPanel>
+        <Border Background="#BDBDBD" CornerRadius="5">
+            <StackPanel Orientation="Vertical">
                 <TextBlock
                     Margin="30,5,0,0"
                     FontSize="20"
                     FontWeight="Bold"
-                    Text="Compras" />
+                    Text="Ventas" />
+                <StackPanel>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="150" />
+                        </Grid.ColumnDefinitions>
+
+                        <StackPanel Margin="990,12,70,303">
+                            <Button
+                                Margin="5"
+                                Content="Guardar"
+                                Style="{StaticResource btnPrimario}" />
+                            <Button
+                                Margin="5"
+                                Content="Nuevo"
+                                Style="{StaticResource btnPrimario}" />
+                        </StackPanel>
+                        <StackPanel Margin="990,126,50,0">
+                            <Grid>
+                                <Label
+                                    VerticalAlignment="Center"
+                                    Content="Subtotal"
+                                    Foreground="Black" />
+                                <TextBox
+                                    Margin="65,0,10,0"
+                                    Foreground="Black"
+                                    IsReadOnly="True"
+                                    Text="{Binding fac_subtotal, Mode=OneWay}" />
+                            </Grid>
+                            <Grid>
+                                <Label
+                                    VerticalAlignment="Center"
+                                    Content="IVA"
+                                    Foreground="Black" />
+                                <TextBox
+                                    Margin="65,0,10,0"
+                                    Foreground="Black"
+                                    IsReadOnly="True"
+                                    Text="{Binding fac_total_iva, Mode=OneWay}" />
+                            </Grid>
+                            <Grid>
+                                <Label
+                                    VerticalAlignment="Center"
+                                    Content="Total"
+                                    Foreground="Black" />
+                                <TextBox
+                                    Margin="65,0,10,0"
+                                    Foreground="Black"
+                                    IsReadOnly="True"
+                                    Text="{Binding fac_total, Mode=OneWay}" />
+                            </Grid>
+                        </StackPanel>
+
+                        <Grid Margin="25,25,225,25">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="190" />
+                                <RowDefinition />
+                                <RowDefinition Height="140" />
+                            </Grid.RowDefinitions>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="105*" />
+                                    <ColumnDefinition Width="103*" />
+                                </Grid.ColumnDefinitions>
+                                <StackPanel Margin="0,0,85,0">
+                                    <Grid>
+                                        <Label
+                                            VerticalAlignment="Center"
+                                            Content="Secuencial:"
+                                            Foreground="Black" />
+                                        <TextBox
+                                            Width="250"
+                                            Margin="100,0,0,0"
+                                            Foreground="Black"
+                                            Text="{Binding fac_numero}" />
+                                    </Grid>
+                                    <Grid>
+                                        <Label
+                                            VerticalAlignment="Center"
+                                            Content="Tipo de identificacion:"
+                                            Foreground="Black" />
+                                        <ComboBox
+                                            Width="250"
+                                            Margin="100,0,0,0"
+                                            Foreground="Black">
+                                            <ComboBox.Items>
+                                                <ComboBoxItem Content="Cedula" />
+                                                <ComboBoxItem Content="Ruc" />
+                                            </ComboBox.Items>
+                                        </ComboBox>
+                                    </Grid>
+                                    <Grid>
+                                        <Label
+                                            VerticalAlignment="Center"
+                                            Content="Identificacion:"
+                                            Foreground="Black" />
+                                        <TextBox
+                                            x:Name="Cedula"
+                                            Width="250"
+                                            Margin="100,0,0,0"
+                                            Foreground="Black"
+                                            Text="{Binding Person.cli_cedula}" />
+                                    </Grid>
+                                    <Grid>
+                                        <Label
+                                            VerticalAlignment="Center"
+                                            Content="Nombres:"
+                                            Foreground="Black" />
+                                        <TextBox
+                                            x:Name="Nombre"
+                                            Width="250"
+                                            Margin="100,0,0,0"
+                                            Foreground="Black"
+                                            Text="{Binding Person.cli_nombres}" />
+                                    </Grid>
+                                    <Grid>
+                                        <Label
+                                            VerticalAlignment="Center"
+                                            Content="Apellidos:"
+                                            Foreground="Black" />
+                                        <TextBox
+                                            x:Name="Apellido"
+                                            Width="250"
+                                            Margin="100,0,0,0"
+                                            Foreground="Black"
+                                            Text="{Binding Person.cli_apellidos}" />
+                                    </Grid>
+                                </StackPanel>
+                                <StackPanel Grid.ColumnSpan="2" Margin="470,0,298,0">
+                                    <Grid>
+                                        <Label
+                                            Margin="-55,0,0,0"
+                                            VerticalAlignment="Center"
+                                            Content="Teléfono:"
+                                            Foreground="Black" />
+                                        <TextBox
+                                            x:Name="Telefono"
+                                            Margin="30,0,11,0"
+                                            Foreground="Black"
+                                            Text="{Binding Person.cli_telefono}" />
+                                    </Grid>
+                                    <Grid>
+                                        <Label
+                                            Width="352"
+                                            Margin="-55,0,0,0"
+                                            HorizontalAlignment="Left"
+                                            VerticalAlignment="Center"
+                                            Content="Direccion:"
+                                            Foreground="Black" />
+                                        <TextBox
+                                            x:Name="Direccion"
+                                            Margin="30,0,11,0"
+                                            Foreground="Black"
+                                            Text="{Binding Person.cli_direccion}" />
+                                    </Grid>
+                                    <Grid>
+                                        <Label
+                                            Margin="-55,0,0,0"
+                                            VerticalAlignment="Center"
+                                            Content="Correo:"
+                                            Foreground="Black" />
+                                        <TextBox
+                                            x:Name="Correo"
+                                            Margin="30,0,11,0"
+                                            Foreground="Black"
+                                            Text="{Binding Person.cli_correo}" />
+                                    </Grid>
+                                    <Grid>
+                                        <Label
+                                            Margin="-55,0,0,0"
+                                            VerticalAlignment="Center"
+                                            Content="Fecha:"
+                                            Foreground="Black" />
+                                        <DatePicker
+                                            Margin="30,0,11,0" x:Name="pck_fecha"
+                                            Foreground="Black"
+                                            SelectedDateChanged="DatePicker_SelectedDateChanged" />
+                                    </Grid>
+                                    <Grid>
+                                        <Label
+                                            Margin="-55,0,0,0"
+                                            VerticalAlignment="Center"
+                                            Content="Añadir item:"
+                                            Cursor="IBeam"
+                                            Foreground="Black" />
+                                        <TextBox
+                                            x:Name="lbl_busqueda"
+                                            Margin="30,0,11,0"
+                                            Foreground="Black"
+                                            KeyDown="TextBox_KeyDown" />
+                                    </Grid>
+                                </StackPanel>
+                            </Grid>
+
+                            <DataGrid
+                                Grid.Row="1"
+                                Grid.RowSpan="2"
+                                Margin="0,25,125,140"
+                                AutoGenerateColumns="False"
+                                BorderBrush="Black"
+                                CanUserAddRows="True"
+                                CanUserReorderColumns="False"
+                                CanUserResizeColumns="False"
+                                ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}"
+                                ItemsSource="{Binding InvoiceDetailModels}"
+                                RowStyle="{DynamicResource DataGridRowStyle1}"
+                                SelectionMode="Single">
+                                <DataGrid.Columns>
+                                    <DataGridTemplateColumn
+                                        Width="Auto"
+                                        CanUserResize="False"
+                                        Header="#"
+                                        IsReadOnly="True" />
+                                    <DataGridTemplateColumn
+                                        Width="*"
+                                        CanUserSort="False"
+                                        Header="Codigo">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <StackPanel>
+                                                    <TextBlock
+                                                        FontSize="20"
+                                                        Foreground="Black"
+                                                        Text="{Binding Code}" />
+                                                </StackPanel>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                    <DataGridTemplateColumn
+                                        Width="*"
+                                        CanUserSort="False"
+                                        Header="Nombre">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <StackPanel>
+                                                    <TextBlock
+                                                        FontSize="20"
+                                                        Foreground="Black"
+                                                        Text="{Binding Name}" />
+                                                </StackPanel>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                    <DataGridTemplateColumn
+                                        Width="*"
+                                        CanUserSort="False"
+                                        Header="Precio total">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <StackPanel>
+                                                    <TextBlock
+                                                        FontSize="20"
+                                                        Foreground="Black"
+                                                        Text="{Binding Det_precio_Unitario}" />
+                                                </StackPanel>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                    <DataGridTemplateColumn
+                                        Width="*"
+                                        CanUserSort="False"
+                                        Header="Cantidad">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <StackPanel>
+                                                    <TextBlock
+                                                        FontSize="20"
+                                                        Foreground="Black"
+                                                        Text="{Binding Det_cantidad}" />
+                                                </StackPanel>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+
+                                    <DataGridTemplateColumn
+                                        Width="*"
+                                        CanUserSort="False"
+                                        Header="Subtotal">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <StackPanel>
+                                                    <TextBlock
+                                                        FontSize="20"
+                                                        Foreground="Black"
+                                                        Text="{Binding Det_subtotal}" />
+                                                </StackPanel>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+
+                                </DataGrid.Columns>
+                            </DataGrid>
+
+
+                        </Grid>
+                    </Grid>
+                </StackPanel>
             </StackPanel>
         </Border>
     </Grid>

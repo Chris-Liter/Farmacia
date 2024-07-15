@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Farmacia.Models
 {
-    class cliente: BaseModel
+    public class cliente: BaseModel
     {
         private int Cli_id;
         private string Cli_cedula;
@@ -15,7 +15,7 @@ namespace Farmacia.Models
         private string Cli_direccion;
         private string Cli_telefono;
         private string Cli_correo;
-        private TypePerson TypePerson;
+        private string TypePerson;
 
         public int cli_id
         {
@@ -28,7 +28,7 @@ namespace Farmacia.Models
             set { Cli_cedula = value; OnPropertyChanged(); }
         }
         public string cli_nombres
-        {
+        {   
             get { return Cli_nombres; }
             set
             {
@@ -56,7 +56,7 @@ namespace Farmacia.Models
             get { return Cli_correo; }
             set { Cli_correo = value; OnPropertyChanged(); }
         }
-        public TypePerson type_person
+        public string type_person
         {
             get { return TypePerson; }
             set { TypePerson = value; OnPropertyChanged(); }
