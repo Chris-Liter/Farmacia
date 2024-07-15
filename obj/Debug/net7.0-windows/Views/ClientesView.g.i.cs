@@ -85,7 +85,7 @@ namespace Farmacia.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Farmacia;V1.0.0.0;component/views/clientesview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Farmacia;component/views/clientesview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Views\ClientesView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

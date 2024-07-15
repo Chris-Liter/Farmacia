@@ -160,32 +160,41 @@
                                             <ComboBox.Items>
                                                 <ComboBoxItem Content="Cedula" />
                                                 <ComboBoxItem Content="Ruc" />
+                                                <ComboBoxItem Content="Consumidor Final" />
                                             </ComboBox.Items>
                                         </ComboBox>
                                     </Grid>
                                     <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="44*" />
+                                            <ColumnDefinition Width="3*" />
+                                            <ColumnDefinition Width="41*" />
+                                        </Grid.ColumnDefinitions>
                                         <Label
+                                            Grid.ColumnSpan="3"
                                             VerticalAlignment="Center"
                                             Content="Identificacion:"
                                             Foreground="Black" />
                                         <TextBox
                                             x:Name="Cedula"
+                                            Grid.ColumnSpan="3"
                                             Width="250"
-                                            Margin="100,0,0,0"
+                                            Margin="145,0,45,0"
                                             Foreground="Black"
-                                            Text="{Binding Person.cli_cedula}" />
+                                            KeyDown="Cedula_KeyDown"
+                                            Text="{Binding Person.cli_cedula, Mode=OneTime}" />
                                     </Grid>
                                     <Grid>
                                         <Label
                                             VerticalAlignment="Center"
                                             Content="Nombres:"
-                                            Foreground="Black" />
+                                               Foreground="Black" />
                                         <TextBox
                                             x:Name="Nombre"
                                             Width="250"
                                             Margin="100,0,0,0"
                                             Foreground="Black"
-                                            Text="{Binding Person.cli_nombres}" />
+                                            Text="{Binding Person.cli_nombres, Mode=TwoWay}" />
                                     </Grid>
                                     <Grid>
                                         <Label
@@ -246,7 +255,8 @@
                                             Content="Fecha:"
                                             Foreground="Black" />
                                         <DatePicker
-                                            Margin="30,0,11,0" x:Name="pck_fecha"
+                                            x:Name="pck_fecha"
+                                            Margin="30,0,11,0"
                                             Foreground="Black"
                                             SelectedDateChanged="DatePicker_SelectedDateChanged" />
                                     </Grid>

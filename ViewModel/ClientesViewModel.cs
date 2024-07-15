@@ -7,6 +7,7 @@ using System.Net.Http;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 
 namespace Farmacia.ViewModel
@@ -74,6 +75,44 @@ namespace Farmacia.ViewModel
                 valor.type_person = "Vendedor";
                 return valor;
             }
+        }
+
+
+        public async Task<cliente> Search(string path)
+        {
+            await Update();
+            try
+            {
+                if (string.IsNullOrEmpty(path))
+                {
+                    Clientes.Clear();
+                    return null;
+                }
+                else
+                {
+                    var response = clientes;
+                    Clientes = new ObservableCollection<cliente>(response.Where(o => o.cli_cedula == path));
+                    cliente cli = null;
+                    if(Clientes.Count >= 1)
+                    {
+                        foreach (cliente i in clientes)
+                        {
+                            cli = i;
+                            return i;
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show($"La cedula {path} no existe", "Error", MessageBoxButton.OK);
+                    }
+                    return cli;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("");
+            }
+        
         }
 
         public async void update()

@@ -23,7 +23,7 @@ namespace Farmacia.ViewModel
             {
                 using (HttpClient client = new HttpClient())
                 {
-                    string url = "http://localhost:8080/api/Usuarios";
+                    string url = $"{URLRep.URL}/Usuarios";
                     //UserModel usuariosView = this;
                     var resp = await client.GetAsync($"{url}/login/{nombre}/{passwords}");
                     if (!resp.IsSuccessStatusCode)
