@@ -188,7 +188,7 @@
                                         <Label
                                             VerticalAlignment="Center"
                                             Content="Nombres:"
-                                               Foreground="Black" />
+                                            Foreground="Black" />
                                         <TextBox
                                             x:Name="Nombre"
                                             Width="250"
@@ -277,6 +277,7 @@
                             </Grid>
 
                             <DataGrid
+                                x:Name="datosAComprar"
                                 Grid.Row="1"
                                 Grid.RowSpan="2"
                                 Margin="0,25,125,140"
@@ -286,7 +287,8 @@
                                 CanUserReorderColumns="False"
                                 CanUserResizeColumns="False"
                                 ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}"
-                                ItemsSource="{Binding InvoiceDetailModels}"
+                                IsReadOnly="False"
+                                ItemsSource="{Binding Productos}"
                                 RowStyle="{DynamicResource DataGridRowStyle1}"
                                 SelectionMode="Single">
                                 <DataGrid.Columns>
@@ -305,7 +307,7 @@
                                                     <TextBlock
                                                         FontSize="20"
                                                         Foreground="Black"
-                                                        Text="{Binding Code}" />
+                                                        Text="{Binding codigo_producto}" />
                                                 </StackPanel>
                                             </DataTemplate>
                                         </DataGridTemplateColumn.CellTemplate>
@@ -320,7 +322,7 @@
                                                     <TextBlock
                                                         FontSize="20"
                                                         Foreground="Black"
-                                                        Text="{Binding Name}" />
+                                                        Text="{Binding nombre}" />
                                                 </StackPanel>
                                             </DataTemplate>
                                         </DataGridTemplateColumn.CellTemplate>
@@ -335,38 +337,43 @@
                                                     <TextBlock
                                                         FontSize="20"
                                                         Foreground="Black"
-                                                        Text="{Binding Det_precio_Unitario}" />
+                                                        Text="{Binding precio}" />
                                                 </StackPanel>
                                             </DataTemplate>
                                         </DataGridTemplateColumn.CellTemplate>
                                     </DataGridTemplateColumn>
-                                    <DataGridTemplateColumn
-                                        Width="*"
-                                        CanUserSort="False"
-                                        Header="Cantidad">
+                                    <DataGridTemplateColumn Width="*" Header="Cantidad">
                                         <DataGridTemplateColumn.CellTemplate>
                                             <DataTemplate>
                                                 <StackPanel>
                                                     <TextBlock
                                                         FontSize="20"
                                                         Foreground="Black"
-                                                        Text="{Binding Det_cantidad}" />
+                                                        Text="{Binding stock}" />
                                                 </StackPanel>
                                             </DataTemplate>
                                         </DataGridTemplateColumn.CellTemplate>
+                                        <DataGridTemplateColumn.CellEditingTemplate>
+                                            <DataTemplate>
+                                                <TextBox
+                                                    FontSize="20"
+                                                    Foreground="Black"
+                                                    Text="{Binding stock, UpdateSourceTrigger=PropertyChanged}" />
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellEditingTemplate>
                                     </DataGridTemplateColumn>
 
                                     <DataGridTemplateColumn
                                         Width="*"
                                         CanUserSort="False"
-                                        Header="Subtotal">
+                                        Header="Iva">
                                         <DataGridTemplateColumn.CellTemplate>
                                             <DataTemplate>
                                                 <StackPanel>
                                                     <TextBlock
                                                         FontSize="20"
                                                         Foreground="Black"
-                                                        Text="{Binding Det_subtotal}" />
+                                                        Text="{Binding iva}" />
                                                 </StackPanel>
                                             </DataTemplate>
                                         </DataGridTemplateColumn.CellTemplate>

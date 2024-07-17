@@ -1,4 +1,5 @@
-﻿using Farmacia.ViewModel;
+﻿using Farmacia.Models;
+using Farmacia.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,14 +23,13 @@ namespace Farmacia.Views.Screens
     {
         public readonly IEntityView entityView;
         private InventoryViewModel inventoryViewModel {  get; set; }
-        public static ListaProductos Current {  get; private set; }
         public ListaProductos(IEntityView entityView)
         {
             this.entityView = entityView;
             InitializeComponent();
             inventoryViewModel = new InventoryViewModel(entityView);
             DataContext = inventoryViewModel;
-            Current = this;
+            //Current = this;
         }
 
         public async Task Aviso(string busqueda)
@@ -37,6 +37,13 @@ namespace Farmacia.Views.Screens
            await inventoryViewModel.Search(busqueda);
         }
 
-        
+        private void ItemsDatagrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            ProductsModel producto = ItemsDatagrid.SelectedItem as ProductsModel;
+            var valor = ComprasView.Instance;
+            producto.stock = 1;
+            valor.compras.Productos.Add(producto);
+            this.Close();          
+        }
     }
 }

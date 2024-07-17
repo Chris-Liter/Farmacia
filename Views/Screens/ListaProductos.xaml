@@ -16,7 +16,7 @@
                     x:Name="ItemsDatagrid"
                     Margin="15"
                     AutoGenerateColumns="False"
-                    BorderBrush="Black"
+                    BorderBrush="Black" MouseDoubleClick="ItemsDatagrid_MouseDoubleClick"
                     CanUserAddRows="True"
                     CanUserReorderColumns="False"
                     CanUserResizeColumns="False"

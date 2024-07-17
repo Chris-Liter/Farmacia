@@ -11,6 +11,7 @@ namespace Farmacia.ViewModel
     internal class VentasViewModel: FacturaModel
     {
         public cliente Person {  get; set; }
+        public ProductsModel MiProducto { get; set; }
         public string SearchParam {  get; set; }
 
         public ObservableCollection<ProductModel> _invoiceDetailModels {  get; set; }

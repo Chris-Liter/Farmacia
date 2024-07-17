@@ -13,13 +13,17 @@ namespace Farmacia.Views
     {
         public IEntityView entityView { get; set; }
         public readonly ComprasViewModel compras;
+        public DataGrid data => datosAComprar;
+        public static ComprasView Instance { get; private set; }
         public ComprasView()
         {
             InitializeComponent();
             compras = new ComprasViewModel();
             DataContext = compras;
+            
             DateTime data = DateTime.Now;
             pck_fecha.SelectedDate = data;
+            Instance = this;
         }
 
 
