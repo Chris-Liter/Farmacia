@@ -96,7 +96,7 @@
                                 Name="btn"
                                 Grid.Column="1"
                                 Margin="20,10,20,10"
-                                Command="{Binding AbrirCreate}"
+                                Command="{Binding AbrirCreat}"
                                 Content="Agregar Cliente"
                                 FontSize="25"
                                 FontWeight="Bold"

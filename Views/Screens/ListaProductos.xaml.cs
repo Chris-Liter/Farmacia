@@ -22,17 +22,21 @@ namespace Farmacia.Views.Screens
     {
         public readonly IEntityView entityView;
         private InventoryViewModel inventoryViewModel {  get; set; }
+        public static ListaProductos Current {  get; private set; }
         public ListaProductos(IEntityView entityView)
         {
             this.entityView = entityView;
             InitializeComponent();
             inventoryViewModel = new InventoryViewModel(entityView);
             DataContext = inventoryViewModel;
+            Current = this;
         }
 
         public async Task Aviso(string busqueda)
         {
            await inventoryViewModel.Search(busqueda);
         }
+
+        
     }
 }

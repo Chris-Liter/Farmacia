@@ -31,6 +31,9 @@
     <Compile Update="Views\Screens\ListaProductos.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\Screens\ManipularCliente.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\Screens\ManipularInventory.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -76,6 +79,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\Screens\ListaProductos.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Screens\ManipularCliente.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\Screens\ManipularInventory.xaml">

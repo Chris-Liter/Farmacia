@@ -35,7 +35,7 @@ namespace Farmacia.Views
                 ListaProductos listaProductos = new ListaProductos(entityView);
 
                 listaProductos.Show();
-                Thread.Sleep(1000);
+                Thread.Sleep(500);
                 string busqueda = lbl_busqueda.Text;
                 await listaProductos.Aviso(busqueda);
 

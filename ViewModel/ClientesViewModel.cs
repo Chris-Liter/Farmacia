@@ -1,4 +1,6 @@
-﻿using Farmacia.Models;
+﻿using CommunityToolkit.Mvvm.Input;
+using Farmacia.Models;
+using Farmacia.Views.Screens;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -15,19 +17,21 @@ namespace Farmacia.ViewModel
     class ClientesViewModel : cliente, IEntityView
     {
 
-        public ICommand CreateOrUpdate {  get; set; }
-        public ICommand Delete { get; set; }
-        public ICommand AbrirCreate { get; set; }
-        public ICommand AbrirUpdate { get; set; }
+        public RelayCommand CreateOrUpdate {  get; set; }
+        public RelayCommand Delete { get; set; }
+        public RelayCommand AbrirCreat { get; set; }
+        public RelayCommand AbrirUpdate { get; set; }
         public ObservableCollection<cliente> clientes { get; set; }
         public ObservableCollection<cliente> Clientes { get { return clientes; } set { clientes = value; OnPropertyChanged(nameof(Clientes)); } }
         public readonly IEntityView entity;
         public string SearchProduct {  get; set; }
         public cliente SelectedCliente {  get; set; }
+        private ManipularCliente manipularCliente;
         public ClientesViewModel(IEntityView entityView)
         {
             this.entity = entityView;
             Clientes = new ObservableCollection<cliente>();
+            AbrirCreat = new RelayCommand(() => AbrirCreate());
             Update();
         }
 
@@ -113,6 +117,28 @@ namespace Farmacia.ViewModel
                 throw new Exception("");
             }
         
+        }
+
+        public void AbrirCreate()
+        {
+            try
+            {
+                if (manipularCliente == null|| manipularCliente.IsVisible == false)
+                {
+                    manipularCliente = new ManipularCliente(this);
+                    manipularCliente.Show();
+                }
+                else
+                {
+                    manipularCliente.Close();
+                    manipularCliente = new ManipularCliente(this);
+                    manipularCliente.Show();
+                }
+            }
+            catch(Exception ex)
+            {
+
+            }
         }
 
         public async void update()

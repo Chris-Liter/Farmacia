@@ -16,6 +16,7 @@ namespace Farmacia.ViewModel
         public RelayCommand CreateOrUpdate {  get; set; }
         public RelayCommand DeleteProduct { get; set; }
         public RelayCommand Open {  get; set; }
+        private ManipularInventory inventory;
 
         public ObservableCollection<ProductsModel> productos;
         public ProductsModel selectedProduct;
@@ -36,7 +37,7 @@ namespace Farmacia.ViewModel
             set
             {
                 search = value;
-                Search(search).RunSynchronously();
+                Search(search);
                 OnPropertyChanged();
             }
         }
@@ -52,6 +53,7 @@ namespace Farmacia.ViewModel
             CreateOrUpdate = new RelayCommand(async () => await CreateOrUpdateProducto());
             DeleteProduct = new RelayCommand(async () => await Delete());
             Open = new RelayCommand(async () => await Abrir());
+            Productos.Clear();
             Update();
 
             this.entityView = entityView;
@@ -70,6 +72,9 @@ namespace Farmacia.ViewModel
                 }
                 else
                 {
+                    Productos.Clear();
+
+                    await Update();
                     var response = productos;
                     Productos = new ObservableCollection<ProductsModel>(response.Where(name => name.nombre.IndexOf(search, StringComparison.OrdinalIgnoreCase) >= 0));
 
@@ -85,7 +90,6 @@ namespace Farmacia.ViewModel
         public async Task Update()
         {
             string url = $"{URLRep.URL}/Producto";
-            Productos.Clear();
             using (HttpClient client = new HttpClient())
             {
                 var response = await client.GetAsync(url);
@@ -98,6 +102,8 @@ namespace Farmacia.ViewModel
                 };
 
                 var jsonTransformado = JsonSerializer.Deserialize<List<ProductsModel>>(json, options);
+                Productos.Clear();
+                productos.Clear();
 
                 foreach (var item in jsonTransformado)
                 {
@@ -111,9 +117,16 @@ namespace Farmacia.ViewModel
             {
                 if (SelectedProduct != null)
                 {
-                    ManipularInventory inventory = new ManipularInventory(this,SelectedProduct);
-                    if (inventory != null)
+                    
+                    if (inventory == null || inventory.IsVisible == false)
                     {
+                        inventory = new ManipularInventory(this, SelectedProduct);
+                        inventory.Show();
+                    }
+                    else
+                    {
+                        inventory.Close();
+                        inventory = new ManipularInventory(this, SelectedProduct);
                         inventory.Show();
                     }
                 }
@@ -131,12 +144,19 @@ namespace Farmacia.ViewModel
         {
             try
             {
-                ManipularInventory inventory = new ManipularInventory(this);
-                if (inventory != null)
+                if (inventory == null || inventory.IsVisible == false)
                 {
+                    inventory = new ManipularInventory(this);
                     inventory.Show();
                 }
-            }catch (Exception ex)
+                else
+                {
+                    inventory.Close();
+                    inventory = new ManipularInventory(this);
+                    inventory.Show();
+                }
+            }
+            catch (Exception ex)
             {
 
             }

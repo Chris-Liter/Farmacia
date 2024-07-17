@@ -23,6 +23,7 @@ namespace Farmacia.ViewModel
 
 
         public UserModel UserSelected { get; set; }
+        private ManipularUser manipularUser;
         public ObservableCollection<UserModel> users;
         public ObservableCollection<UserModel> Users{ get { return users; } set { users= value; OnPropertyChanged(nameof(Users)); } }
         public string permisoSeleccionado {  get; set; }
@@ -115,14 +116,17 @@ namespace Farmacia.ViewModel
         {
             try
             {
-                ManipularUser manipularUser = new ManipularUser(_entityView);
-                if( manipularUser != null)
+                
+                if( manipularUser == null || manipularUser.IsVisible == false)
                 {
-                     manipularUser.Show();
+                    manipularUser = new ManipularUser(_entityView);
+                    manipularUser.Show();
                 }
                 else
                 {
-
+                    manipularUser.Close();
+                    manipularUser = new ManipularUser(_entityView);
+                    manipularUser.Show();
                 }
             }
             catch(Exception e)
@@ -137,14 +141,17 @@ namespace Farmacia.ViewModel
             {
                 if(UserSelected != null)
                 {
-                    ManipularUser manipularUser = new ManipularUser(this, UserSelected);
+                    
                     if (manipularUser != null)
                     {
+                        manipularUser = new ManipularUser(this, UserSelected);
                         manipularUser.Show();
                     }
                     else
                     {
-
+                        manipularUser.Close();
+                        manipularUser = new ManipularUser(this, UserSelected);
+                        manipularUser.Show();
                     }
                 }
                 else

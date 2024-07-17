@@ -9,7 +9,7 @@
     Width="800"
     Height="450"
     mc:Ignorable="d">
-    <ScrollViewer VerticalScrollBarVisibility="Visible" CanContentScroll="True" >
+    <ScrollViewer CanContentScroll="True" VerticalScrollBarVisibility="Visible">
         <Grid>
             <StackPanel>
                 <DataGrid
