@@ -3,95 +3,95 @@
     internal class DetalleFacturaModel:BaseModel
     {
 
-        private int det_id;
-        private string code;
-        private string name;
-        private int det_cantidad;
-        private double det_precio_unitario;
-        private Taxes pro_tax;
-        private int tr_prod_id;
-        private int tr_fac_numero;
-        private int tr_fac_tipo;
+        private int Det_id;
+        private string Code;
+        private string Name;
+        private int Det_cantidad;
+        private double Det_precio_unitario;
+        private string Pro_tax;
+        private int Tr_prod_id;
+        private int Tr_fac_numero;
+        private int Tr_fac_tipo;
 
-        public Taxes Pro_tax
+        public string pro_tax
         {
-            get { return pro_tax; }
-            set { pro_tax = value; OnPropertyChanged(); }
+            get { return Pro_tax; }
+            set { Pro_tax = value; OnPropertyChanged(); }
 
         }
 
-        public int Det_id
+        public int det_id
         {
-            get { return det_id; }
-            set { det_id = value; OnPropertyChanged(); }
+            get { return Det_id; }
+            set { Det_id = value; OnPropertyChanged(); }
 
         }
-        public int Det_cantidad
+        public int det_cantidad
         {
-            get { return det_cantidad; }
+            get { return Det_cantidad; }
             set
             {
                 if (value == 0)
                 {
-                    det_cantidad = 1;
+                    Det_cantidad = 1;
                 }
                 else
                 {
-                    det_cantidad = value;
+                    Det_cantidad = value;
                 }
                 OnPropertyChanged();
                 OnPropertyChanged("Det_subtotal"); ;
             }
         }
-        public double Det_precio_Unitario
+        public double det_precio_Unitario
         {
-            get { return det_precio_unitario; }
-            set { det_precio_unitario = value; OnPropertyChanged(); }
+            get { return Det_precio_unitario; }
+            set { Det_precio_unitario = value; OnPropertyChanged(); }
         }
 
-        public double Det_subtotal
+        public double det_subtotal
         {
-            get { return Math.Round(Det_precio_Unitario * Det_cantidad, 2); }
+            get { return Math.Round(det_precio_Unitario * det_cantidad, 2); }
         }
 
-        public double Det_iva
+        public double det_iva
         {
             get
             {
-                if (Pro_tax == Taxes.IVA15)
-                    return Det_subtotal * 0.15;
+                if (pro_tax == "0.15")
+                    return det_subtotal * 0.15;
                 return 0;
             }
         }
-        public double Det_total
+        public double det_total
         {
-            get { return Det_subtotal + Det_iva; }
+            get { return det_subtotal + det_iva; }
         }
-        public int Tr_prod_id
+        public int tr_prod_id
         {
-            get { return tr_prod_id; }
-            set { tr_prod_id = value; OnPropertyChanged(); }
+            get { return Tr_prod_id; }
+            set { Tr_prod_id = value; OnPropertyChanged(); }
         }
-        public int Tr_fac_numero
+        public int tr_fac_numero
         {
-            get { return tr_fac_numero; }
-            set { tr_fac_numero = value; OnPropertyChanged(); }
+            get { return Tr_fac_numero; }
+            set { Tr_fac_numero = value; OnPropertyChanged(); }
         }
-        public int Tr_fac_tipo
+        public int tr_fac_tipo
         {
-            get { return tr_fac_tipo; }
+            get { return Tr_fac_tipo; }
             set { tr_fac_tipo = value; OnPropertyChanged(); }
         }
-        public string Code
+        public string code
         {
-            get { return code; }
-            set { code = value; OnPropertyChanged(); }
+            get { return Code; }
+            set { Code = value; OnPropertyChanged(); }
         }
 
-        public string Name
+        public string name
         {
-            get { return name; }
-            set { name = value; OnPropertyChanged(); }
+            get { return Name; }
+            set { Name = value; OnPropertyChanged(); }
         }
     }
 }

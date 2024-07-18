@@ -14,6 +14,9 @@ namespace Farmacia.Views
         public IEntityView entityView { get; set; }
         public readonly ComprasViewModel compras;
         public DataGrid data => datosAComprar;
+        public TextBox Total => lbl_total;
+        public TextBox Iva => lbl_iva;
+        public TextBox Subtotal => lbl_subtotal;
         public static ComprasView Instance { get; private set; }
         public ComprasView()
         {
@@ -62,10 +65,18 @@ namespace Farmacia.Views
                     Correo.Text = compras.Person.cli_correo;
                     Telefono.Text = compras.Person.cli_telefono;
                     Direccion.Text = compras.Person.cli_direccion;
-
+                    double id = compras.Person.cli_id;
+                    var instance = ComprasViewModel.Instance;
+                    instance.idCliente = id;
                 }
 
             }
+        }
+
+
+        private void elegir_stock_KeyDown(object sender, KeyEventArgs e)
+        {
+
         }
     }
 }

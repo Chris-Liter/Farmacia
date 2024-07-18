@@ -8,7 +8,7 @@ namespace Farmacia.Services
 {
     public static class UserCache
     {
-        public static double? Id;
+        public static double Id;
         public static string? Nombre;
     }
 }

@@ -6,8 +6,8 @@ namespace Farmacia.Models
     internal class FacturaModel: BaseModel
     {
         private int Fac_id;
-        private int Fac_tipo;
-        private int Fac_numero;
+        private string? Fac_tipo;
+        private int? Fac_numero;
         private string? Fac_fecha;
         private double? Fac_subtotal;
         private double? Fac_total;
@@ -20,15 +20,15 @@ namespace Farmacia.Models
             get { return Fac_id; }
             set { Fac_id = value; OnPropertyChanged(); }
         }
-        public int fac_tipo {
+        public string? fac_tipo {
             get { return Fac_tipo; }
             set { Fac_tipo = value; OnPropertyChanged(); }
         }
-        public int fac_numero {  
+        public int? fac_numero {  
             get { return Fac_numero; }
             set { Fac_numero = value; OnPropertyChanged(); }
         }
-        public string fac_fecha {
+        public string? fac_fecha {
             get { return Fac_fecha; }
             set { Fac_fecha = value; OnPropertyChanged(); }
         }

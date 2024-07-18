@@ -37,13 +37,19 @@ namespace Farmacia.Views.Screens
            await inventoryViewModel.Search(busqueda);
         }
 
-        private void ItemsDatagrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        private async void ItemsDatagrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             ProductsModel producto = ItemsDatagrid.SelectedItem as ProductsModel;
             var valor = ComprasView.Instance;
             producto.stock = 1;
             valor.compras.Productos.Add(producto);
-            this.Close();          
+            decimal total = await valor.compras.CalcularTotal();
+            decimal iva = await valor.compras.CalcularIva();
+            decimal subtotal = await valor.compras.CalcularSubTotal();
+            valor.Total.Text = total.ToString();
+            valor.Iva.Text = iva.ToString();
+            valor.Subtotal.Text = subtotal.ToString();
+            Close();          
         }
     }
 }

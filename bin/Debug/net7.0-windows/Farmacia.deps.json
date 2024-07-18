@@ -9,7 +9,7 @@
       "Farmacia/1.0.0": {
         "dependencies": {
           "CommunityToolkit.Mvvm": "8.2.2",
-          "MahApps.Metro.IconPacks.Material": "5.0.0",
+          "MahApps.Metro.IconPacks.Material": "4.10.0",
           "Microsoft.Extensions.Hosting": "8.0.0",
           "WPF-UI": "3.0.4"
         },
@@ -25,25 +25,15 @@
           }
         }
       },
-      "MahApps.Metro.IconPacks.Core/5.0.0": {
-        "dependencies": {
-          "System.Text.Json": "8.0.0"
-        },
+      "MahApps.Metro.IconPacks.Material/4.10.0": {
         "runtime": {
-          "lib/net6.0-windows7.0/MahApps.Metro.IconPacks.Core.dll": {
-            "assemblyVersion": "5.0.0.0",
-            "fileVersion": "5.0.0.90"
-          }
-        }
-      },
-      "MahApps.Metro.IconPacks.Material/5.0.0": {
-        "dependencies": {
-          "MahApps.Metro.IconPacks.Core": "5.0.0"
-        },
-        "runtime": {
-          "lib/net6.0-windows7.0/MahApps.Metro.IconPacks.Material.dll": {
-            "assemblyVersion": "5.0.0.0",
-            "fileVersion": "5.0.0.90"
+          "lib/net5.0-windows7.0/MahApps.Metro.IconPacks.Core.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.10.0.13"
+          },
+          "lib/net5.0-windows7.0/MahApps.Metro.IconPacks.Material.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.10.0.13"
           }
         }
       },
@@ -490,19 +480,12 @@
       "path": "communitytoolkit.mvvm/8.2.2",
       "hashPath": "communitytoolkit.mvvm.8.2.2.nupkg.sha512"
     },
-    "MahApps.Metro.IconPacks.Core/5.0.0": {
+    "MahApps.Metro.IconPacks.Material/4.10.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-+/I2c58cTiKdjDHuxBgS9+P3hCZIVUP+NRlLlvppMQNiLzP7xVR+Q31w/iylh5YVlCbQws65TCdylGN3QqnjlA==",
-      "path": "mahapps.metro.iconpacks.core/5.0.0",
-      "hashPath": "mahapps.metro.iconpacks.core.5.0.0.nupkg.sha512"
-    },
-    "MahApps.Metro.IconPacks.Material/5.0.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-2tJGKA21F4P/iujzZXsllxLvZLFtomPhaeKeQ9NYbS3LUyDnmnk7YDH37C28WCUFsH1tlky3Ow8EgBsmPkQGyg==",
-      "path": "mahapps.metro.iconpacks.material/5.0.0",
-      "hashPath": "mahapps.metro.iconpacks.material.5.0.0.nupkg.sha512"
+      "sha512": "sha512-Gq7zWwAcmBZAFwsXlTHU7h+wJKC/mabuVfyMnMEiqiGFZXUvCprgxDW+Sm1XU2SQZOCucjfW6k1a2K672SMwUg==",
+      "path": "mahapps.metro.iconpacks.material/4.10.0",
+      "hashPath": "mahapps.metro.iconpacks.material.4.10.0.nupkg.sha512"
     },
     "Microsoft.Extensions.Configuration/8.0.0": {
       "type": "package",

@@ -71,7 +71,7 @@
                     Margin="30,5,0,0"
                     FontSize="20"
                     FontWeight="Bold"
-                    Text="Ventas" />
+                    Text="Compras" />
                 <StackPanel>
                     <Grid>
                         <Grid.ColumnDefinitions>
@@ -82,6 +82,7 @@
                         <StackPanel Margin="990,12,70,303">
                             <Button
                                 Margin="5"
+                                Command="{Binding GuardarFactura}"
                                 Content="Guardar"
                                 Style="{StaticResource btnPrimario}" />
                             <Button
@@ -96,10 +97,10 @@
                                     Content="Subtotal"
                                     Foreground="Black" />
                                 <TextBox
+                                    x:Name="lbl_subtotal"
                                     Margin="65,0,10,0"
                                     Foreground="Black"
-                                    IsReadOnly="True"
-                                    Text="{Binding fac_subtotal, Mode=OneWay}" />
+                                    IsReadOnly="True" />
                             </Grid>
                             <Grid>
                                 <Label
@@ -107,10 +108,10 @@
                                     Content="IVA"
                                     Foreground="Black" />
                                 <TextBox
+                                    x:Name="lbl_iva"
                                     Margin="65,0,10,0"
                                     Foreground="Black"
-                                    IsReadOnly="True"
-                                    Text="{Binding fac_total_iva, Mode=OneWay}" />
+                                    IsReadOnly="True" />
                             </Grid>
                             <Grid>
                                 <Label
@@ -118,10 +119,10 @@
                                     Content="Total"
                                     Foreground="Black" />
                                 <TextBox
+                                    x:Name="lbl_total"
                                     Margin="65,0,10,0"
                                     Foreground="Black"
-                                    IsReadOnly="True"
-                                    Text="{Binding fac_total, Mode=OneWay}" />
+                                    IsReadOnly="True" />
                             </Grid>
                         </StackPanel>
 
@@ -330,7 +331,7 @@
                                     <DataGridTemplateColumn
                                         Width="*"
                                         CanUserSort="False"
-                                        Header="Precio total">
+                                        Header="Precio unitario">
                                         <DataGridTemplateColumn.CellTemplate>
                                             <DataTemplate>
                                                 <StackPanel>
@@ -356,8 +357,10 @@
                                         <DataGridTemplateColumn.CellEditingTemplate>
                                             <DataTemplate>
                                                 <TextBox
+                                                    x:Name="elegir_stock"
                                                     FontSize="20"
                                                     Foreground="Black"
+                                                    KeyDown="elegir_stock_KeyDown"
                                                     Text="{Binding stock, UpdateSourceTrigger=PropertyChanged}" />
                                             </DataTemplate>
                                         </DataGridTemplateColumn.CellEditingTemplate>
