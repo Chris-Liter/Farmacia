@@ -23,16 +23,24 @@ namespace Farmacia.Views.Screens
     {
 
         public IEntityView entityView {  get; set; }
+        public readonly ClientesViewModel view;
+        public static ManipularCliente Current { get; private set; }
         public ManipularCliente(IEntityView entityView)
         {
             InitializeComponent();
+            view = new ClientesViewModel(entityView);
+            DataContext = view;
             this.entityView = entityView;
+            Current = this;
         }
 
         public ManipularCliente(IEntityView entityView, cliente client)
         {
             InitializeComponent();
+            view = new ClientesViewModel(entityView);
+            DataContext = view;
             this.entityView = entityView;
+            Current = this;
 
         }
 

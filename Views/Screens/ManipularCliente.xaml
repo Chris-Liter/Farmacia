@@ -53,7 +53,7 @@
                     Margin="15,5"
                     VerticalAlignment="Center"
                     FontFamily="20"
-                    Text="{Binding nombre}" />
+                    Text="{Binding cli_nombres}" />
 
                 <TextBlock
                     Grid.Row="2"
@@ -70,7 +70,7 @@
                     Margin="15,5"
                     VerticalAlignment="Center"
                     FontFamily="20"
-                    Text="{Binding nombre}" />
+                    Text="{Binding cli_apellidos}" />
 
                 <!--  Nombre  -->
                 <TextBlock
@@ -88,7 +88,7 @@
                     Margin="15,5"
                     VerticalAlignment="Center"
                     FontFamily="20"
-                    Text="{Binding email}" />
+                    Text="{Binding cli_correo}" />
 
                 <!--  Stock  -->
                 <TextBlock
@@ -107,7 +107,7 @@
                     VerticalAlignment="Center"
                     FontFamily="20"
                     InputScope="Number"
-                    Text="{Binding passwords}" />
+                    Text="{Binding cli_cedula}" />
 
                 <!--  Iva  -->
                 <TextBlock
@@ -125,7 +125,7 @@
                     Margin="15,5"
                     VerticalAlignment="Center"
                     FontFamily="20"
-                    Text="{Binding permisos}" />
+                    Text="{Binding cli_direccion}" />
 
                 <TextBlock
                     Grid.Row="6"
@@ -141,7 +141,7 @@
                     Grid.Column="1"
                     Margin="15,0"
                     FontFamily="20"
-                    InputScope="Number" />
+                    InputScope="Number" Text="{Binding cli_telefono}"/>
                 <TextBlock
                     Grid.Row="7"
                     Grid.Column="0"
@@ -153,9 +153,12 @@
                 <ComboBox
                     x:Name="combo_tipo_cliente"
                     Grid.Row="7"
-                    Grid.Column="1" Loaded="combo_tipo_cliente_Loaded"
+                    Grid.Column="1"
                     Margin="15,0"
-                    FontFamily="20" />
+                    FontFamily="20"
+                    Loaded="combo_tipo_cliente_Loaded"
+                    SelectedItem="{Binding rolSeleccionado, Mode=TwoWay}"
+                    Text="{Binding type_person}" />
                 <!--  Guardar Button  -->
                 <StackPanel
                     Grid.Row="8"
@@ -164,7 +167,7 @@
                     HorizontalAlignment="Stretch">
                     <Button
                         HorizontalContentAlignment="Center"
-                        Command="{Binding AddOrEditUser, Mode=TwoWay}"
+                        Command="{Binding CreateOrUpdate, Mode=TwoWay}"
                         Content="Guardar"
                         FontSize="30"
                         FontStretch="UltraExpanded"

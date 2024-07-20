@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Farmacia.Models
 {
-    internal class FacturaModel: BaseModel
+    public class FacturaModel: BaseModel
     {
         private int Fac_id;
         private string? Fac_tipo;

@@ -18,10 +18,11 @@ namespace Farmacia.Views
         public TextBox Iva => lbl_iva;
         public TextBox Subtotal => lbl_subtotal;
         public static ComprasView Instance { get; private set; }
+        public IEntityView entity;
         public ComprasView()
         {
             InitializeComponent();
-            compras = new ComprasViewModel();
+            compras = new ComprasViewModel(entity);
             DataContext = compras;
             
             DateTime data = DateTime.Now;

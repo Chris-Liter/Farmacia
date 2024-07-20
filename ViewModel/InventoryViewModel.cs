@@ -180,7 +180,7 @@ namespace Farmacia.ViewModel
                         {
                             var miVentana = ManipularInventory.Current;
                             miVentana.Close();
-                            entityView.update();
+                            //entityView.update();
                             MessageBox.Show("Se a modificado el producto con exito", "Exito", MessageBoxButton.OK);
                         }
                         else
